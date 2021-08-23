@@ -10,7 +10,6 @@
 		B1C4F1A126D3DF8D00617FD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C4F1A026D3DF8D00617FD9 /* AppDelegate.swift */; };
 		B1C4F1A326D3DF8D00617FD9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C4F1A226D3DF8D00617FD9 /* SceneDelegate.swift */; };
 		B1C4F1A526D3DF8D00617FD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C4F1A426D3DF8D00617FD9 /* ViewController.swift */; };
-		B1C4F1A826D3DF8D00617FD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1C4F1A626D3DF8D00617FD9 /* Main.storyboard */; };
 		B1C4F1AA26D3DF8F00617FD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1C4F1A926D3DF8F00617FD9 /* Assets.xcassets */; };
 		B1C4F1AD26D3DF8F00617FD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1C4F1AB26D3DF8F00617FD9 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -20,7 +19,6 @@
 		B1C4F1A026D3DF8D00617FD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1C4F1A226D3DF8D00617FD9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B1C4F1A426D3DF8D00617FD9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B1C4F1A726D3DF8D00617FD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B1C4F1A926D3DF8F00617FD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1C4F1AC26D3DF8F00617FD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1C4F1AE26D3DF8F00617FD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -43,7 +41,6 @@
 				B1C4F1A026D3DF8D00617FD9 /* AppDelegate.swift */,
 				B1C4F1A226D3DF8D00617FD9 /* SceneDelegate.swift */,
 				B1C4F1A426D3DF8D00617FD9 /* ViewController.swift */,
-				B1C4F1A626D3DF8D00617FD9 /* Main.storyboard */,
 				B1C4F1A926D3DF8F00617FD9 /* Assets.xcassets */,
 				B1C4F1AB26D3DF8F00617FD9 /* LaunchScreen.storyboard */,
 				B1C4F1AE26D3DF8F00617FD9 /* Info.plist */,
@@ -118,7 +115,6 @@
 			files = (
 				B1C4F1AD26D3DF8F00617FD9 /* LaunchScreen.storyboard in Resources */,
 				B1C4F1AA26D3DF8F00617FD9 /* Assets.xcassets in Resources */,
-				B1C4F1A826D3DF8D00617FD9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,14 +134,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B1C4F1A626D3DF8D00617FD9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B1C4F1A726D3DF8D00617FD9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B1C4F1AB26D3DF8F00617FD9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -208,7 +196,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -263,7 +251,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -280,7 +268,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DUBTL9M98H;
-				INFOPLIST_FILE = PicSplash/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -288,7 +277,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = itotdel.PicSplash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -299,7 +288,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DUBTL9M98H;
-				INFOPLIST_FILE = PicSplash/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +297,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = itotdel.PicSplash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
