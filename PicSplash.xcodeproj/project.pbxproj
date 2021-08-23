@@ -3,25 +3,39 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		B1C4F1A126D3DF8D00617FD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C4F1A026D3DF8D00617FD9 /* AppDelegate.swift */; };
-		B1C4F1A326D3DF8D00617FD9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C4F1A226D3DF8D00617FD9 /* SceneDelegate.swift */; };
 		B1C4F1A526D3DF8D00617FD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C4F1A426D3DF8D00617FD9 /* ViewController.swift */; };
 		B1C4F1AA26D3DF8F00617FD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1C4F1A926D3DF8F00617FD9 /* Assets.xcassets */; };
 		B1C4F1AD26D3DF8F00617FD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1C4F1AB26D3DF8F00617FD9 /* LaunchScreen.storyboard */; };
+		B1C4F1B626D3E4D400617FD9 /* DITranquillity in Frameworks */ = {isa = PBXBuildFile; productRef = B1C4F1B526D3E4D400617FD9 /* DITranquillity */; };
+		B1C4F1B926D3E51100617FD9 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B1C4F1B826D3E51100617FD9 /* SnapKit */; };
+		B1C4F1BC26D3E54300617FD9 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C4F1BB26D3E54300617FD9 /* MenuViewController.swift */; };
+		B1C4F1C026D4102C00617FD9 /* MenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C4F1BF26D4102C00617FD9 /* MenuPresenter.swift */; };
+		B1C4F1C226D4103400617FD9 /* MenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C4F1C126D4103400617FD9 /* MenuRouter.swift */; };
+		B1C4F1C426D4104000617FD9 /* MenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C4F1C326D4104000617FD9 /* MenuInteractor.swift */; };
+		B1C4F1C626D4104E00617FD9 /* MenuConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C4F1C526D4104E00617FD9 /* MenuConfigurator.swift */; };
+		B1C4F1C926D4113900617FD9 /* MenuBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C4F1C826D4113900617FD9 /* MenuBtnView.swift */; };
+		B1C4F1CF26D4148500617FD9 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C4F1CE26D4148500617FD9 /* UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B1C4F19D26D3DF8D00617FD9 /* PicSplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicSplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1C4F1A026D3DF8D00617FD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B1C4F1A226D3DF8D00617FD9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B1C4F1A426D3DF8D00617FD9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B1C4F1A926D3DF8F00617FD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1C4F1AC26D3DF8F00617FD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1C4F1AE26D3DF8F00617FD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1C4F1BB26D3E54300617FD9 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		B1C4F1BF26D4102C00617FD9 /* MenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPresenter.swift; sourceTree = "<group>"; };
+		B1C4F1C126D4103400617FD9 /* MenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouter.swift; sourceTree = "<group>"; };
+		B1C4F1C326D4104000617FD9 /* MenuInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInteractor.swift; sourceTree = "<group>"; };
+		B1C4F1C526D4104E00617FD9 /* MenuConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuConfigurator.swift; sourceTree = "<group>"; };
+		B1C4F1C826D4113900617FD9 /* MenuBtnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBtnView.swift; sourceTree = "<group>"; };
+		B1C4F1CE26D4148500617FD9 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1C4F1B626D3E4D400617FD9 /* DITranquillity in Frameworks */,
+				B1C4F1B926D3E51100617FD9 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,8 +54,9 @@
 		B1C4F19426D3DF8D00617FD9 = {
 			isa = PBXGroup;
 			children = (
-				B1C4F1A026D3DF8D00617FD9 /* AppDelegate.swift */,
-				B1C4F1A226D3DF8D00617FD9 /* SceneDelegate.swift */,
+				B1C4F1CC26D4146200617FD9 /* Common */,
+				B1C4F1BD26D3E56900617FD9 /* App */,
+				B1C4F1BA26D3E52600617FD9 /* Menu */,
 				B1C4F1A426D3DF8D00617FD9 /* ViewController.swift */,
 				B1C4F1A926D3DF8F00617FD9 /* Assets.xcassets */,
 				B1C4F1AB26D3DF8F00617FD9 /* LaunchScreen.storyboard */,
@@ -54,6 +71,59 @@
 				B1C4F19D26D3DF8D00617FD9 /* PicSplash.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B1C4F1BA26D3E52600617FD9 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				B1C4F1C726D4110F00617FD9 /* Views */,
+				B1C4F1BF26D4102C00617FD9 /* MenuPresenter.swift */,
+				B1C4F1C126D4103400617FD9 /* MenuRouter.swift */,
+				B1C4F1C326D4104000617FD9 /* MenuInteractor.swift */,
+				B1C4F1C526D4104E00617FD9 /* MenuConfigurator.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		B1C4F1BD26D3E56900617FD9 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B1C4F1BE26D3E57400617FD9 /* DI */,
+				B1C4F1A026D3DF8D00617FD9 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		B1C4F1BE26D3E57400617FD9 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		B1C4F1C726D4110F00617FD9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B1C4F1BB26D3E54300617FD9 /* MenuViewController.swift */,
+				B1C4F1C826D4113900617FD9 /* MenuBtnView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B1C4F1CC26D4146200617FD9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B1C4F1CD26D4146700617FD9 /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		B1C4F1CD26D4146700617FD9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B1C4F1CE26D4148500617FD9 /* UIView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,6 +142,10 @@
 			dependencies = (
 			);
 			name = PicSplash;
+			packageProductDependencies = (
+				B1C4F1B526D3E4D400617FD9 /* DITranquillity */,
+				B1C4F1B826D3E51100617FD9 /* SnapKit */,
+			);
 			productName = PicSplash;
 			productReference = B1C4F19D26D3DF8D00617FD9 /* PicSplash.app */;
 			productType = "com.apple.product-type.application";
@@ -99,6 +173,10 @@
 				Base,
 			);
 			mainGroup = B1C4F19426D3DF8D00617FD9;
+			packageReferences = (
+				B1C4F1B426D3E4D400617FD9 /* XCRemoteSwiftPackageReference "DITranquillity" */,
+				B1C4F1B726D3E51100617FD9 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = B1C4F19E26D3DF8D00617FD9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,9 +203,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1C4F1CF26D4148500617FD9 /* UIView.swift in Sources */,
+				B1C4F1C926D4113900617FD9 /* MenuBtnView.swift in Sources */,
 				B1C4F1A526D3DF8D00617FD9 /* ViewController.swift in Sources */,
+				B1C4F1BC26D3E54300617FD9 /* MenuViewController.swift in Sources */,
 				B1C4F1A126D3DF8D00617FD9 /* AppDelegate.swift in Sources */,
-				B1C4F1A326D3DF8D00617FD9 /* SceneDelegate.swift in Sources */,
+				B1C4F1C426D4104000617FD9 /* MenuInteractor.swift in Sources */,
+				B1C4F1C626D4104E00617FD9 /* MenuConfigurator.swift in Sources */,
+				B1C4F1C226D4103400617FD9 /* MenuRouter.swift in Sources */,
+				B1C4F1C026D4102C00617FD9 /* MenuPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,7 +395,7 @@
 				B1C4F1B026D3DF8F00617FD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		B1C4F1B126D3DF8F00617FD9 /* Build configuration list for PBXNativeTarget "PicSplash" */ = {
 			isa = XCConfigurationList;
@@ -320,9 +404,41 @@
 				B1C4F1B326D3DF8F00617FD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B1C4F1B426D3E4D400617FD9 /* XCRemoteSwiftPackageReference "DITranquillity" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ivlevAstef/DITranquillity";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.3.3;
+			};
+		};
+		B1C4F1B726D3E51100617FD9 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B1C4F1B526D3E4D400617FD9 /* DITranquillity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B1C4F1B426D3E4D400617FD9 /* XCRemoteSwiftPackageReference "DITranquillity" */;
+			productName = DITranquillity;
+		};
+		B1C4F1B826D3E51100617FD9 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B1C4F1B726D3E51100617FD9 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B1C4F19526D3DF8D00617FD9 /* Project object */;
 }
