@@ -40,7 +40,13 @@
 		B1C4F19426D3DF8D00617FD9 = {
 			isa = PBXGroup;
 			children = (
-				B1C4F19F26D3DF8D00617FD9 /* PicSplash */,
+				B1C4F1A026D3DF8D00617FD9 /* AppDelegate.swift */,
+				B1C4F1A226D3DF8D00617FD9 /* SceneDelegate.swift */,
+				B1C4F1A426D3DF8D00617FD9 /* ViewController.swift */,
+				B1C4F1A626D3DF8D00617FD9 /* Main.storyboard */,
+				B1C4F1A926D3DF8F00617FD9 /* Assets.xcassets */,
+				B1C4F1AB26D3DF8F00617FD9 /* LaunchScreen.storyboard */,
+				B1C4F1AE26D3DF8F00617FD9 /* Info.plist */,
 				B1C4F19E26D3DF8D00617FD9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,20 +57,6 @@
 				B1C4F19D26D3DF8D00617FD9 /* PicSplash.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		B1C4F19F26D3DF8D00617FD9 /* PicSplash */ = {
-			isa = PBXGroup;
-			children = (
-				B1C4F1A026D3DF8D00617FD9 /* AppDelegate.swift */,
-				B1C4F1A226D3DF8D00617FD9 /* SceneDelegate.swift */,
-				B1C4F1A426D3DF8D00617FD9 /* ViewController.swift */,
-				B1C4F1A626D3DF8D00617FD9 /* Main.storyboard */,
-				B1C4F1A926D3DF8F00617FD9 /* Assets.xcassets */,
-				B1C4F1AB26D3DF8F00617FD9 /* LaunchScreen.storyboard */,
-				B1C4F1AE26D3DF8F00617FD9 /* Info.plist */,
-			);
-			path = PicSplash;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
