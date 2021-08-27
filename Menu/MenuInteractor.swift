@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+/// Протокол для работы с MenuInteractor
+protocol MenuBusinessLogic { }
+
+final class MenuInteractor {
+    weak var presenter: MenuPresentationLogic?
+}
+
+// MARK: MenuBusinessLogic
+extension MenuInteractor: MenuBusinessLogic { }

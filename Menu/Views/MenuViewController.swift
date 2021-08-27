@@ -8,8 +8,16 @@
 import UIKit
 import SnapKit
 
-class MenuViewController: UIViewController {
+/// Протокол отображения MenuViewController-а
+protocol MenuDisplayLogic: AnyObject {
+    
+}
 
+final class MenuViewController: UIViewController {
+
+    // MARK Presenter
+    var presenter: MenuViewControllerOutput?
+        
     // MARK: - UI
     
     let picturesView: MenuBtnView = {
@@ -25,7 +33,7 @@ class MenuViewController: UIViewController {
         
         return view
     }()
-        
+            
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -67,4 +75,8 @@ private extension MenuViewController {
         })
         
     }
+}
+
+extension MenuViewController: MenuDisplayLogic {
+    
 }

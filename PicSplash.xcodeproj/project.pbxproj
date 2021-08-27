@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B176D2FA26D8C375007CD717 /* AppDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176D2F926D8C375007CD717 /* AppDI.swift */; };
+		B176D2FD26D8C3EE007CD717 /* MenuDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176D2FC26D8C3EE007CD717 /* MenuDependency.swift */; };
+		B176D30026D8C639007CD717 /* GlobalNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176D2FF26D8C639007CD717 /* GlobalNavigationViewController.swift */; };
+		B176D30226D8C697007CD717 /* AppDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176D30126D8C697007CD717 /* AppDependency.swift */; };
 		B1C4F1A126D3DF8D00617FD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C4F1A026D3DF8D00617FD9 /* AppDelegate.swift */; };
 		B1C4F1A526D3DF8D00617FD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C4F1A426D3DF8D00617FD9 /* ViewController.swift */; };
 		B1C4F1AA26D3DF8F00617FD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1C4F1A926D3DF8F00617FD9 /* Assets.xcassets */; };
@@ -17,12 +21,15 @@
 		B1C4F1C026D4102C00617FD9 /* MenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C4F1BF26D4102C00617FD9 /* MenuPresenter.swift */; };
 		B1C4F1C226D4103400617FD9 /* MenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C4F1C126D4103400617FD9 /* MenuRouter.swift */; };
 		B1C4F1C426D4104000617FD9 /* MenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C4F1C326D4104000617FD9 /* MenuInteractor.swift */; };
-		B1C4F1C626D4104E00617FD9 /* MenuConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C4F1C526D4104E00617FD9 /* MenuConfigurator.swift */; };
 		B1C4F1C926D4113900617FD9 /* MenuBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C4F1C826D4113900617FD9 /* MenuBtnView.swift */; };
 		B1C4F1CF26D4148500617FD9 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C4F1CE26D4148500617FD9 /* UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B176D2F926D8C375007CD717 /* AppDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDI.swift; sourceTree = "<group>"; };
+		B176D2FC26D8C3EE007CD717 /* MenuDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDependency.swift; sourceTree = "<group>"; };
+		B176D2FF26D8C639007CD717 /* GlobalNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalNavigationViewController.swift; sourceTree = "<group>"; };
+		B176D30126D8C697007CD717 /* AppDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependency.swift; sourceTree = "<group>"; };
 		B1C4F19D26D3DF8D00617FD9 /* PicSplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicSplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1C4F1A026D3DF8D00617FD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1C4F1A426D3DF8D00617FD9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,7 +40,6 @@
 		B1C4F1BF26D4102C00617FD9 /* MenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPresenter.swift; sourceTree = "<group>"; };
 		B1C4F1C126D4103400617FD9 /* MenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouter.swift; sourceTree = "<group>"; };
 		B1C4F1C326D4104000617FD9 /* MenuInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInteractor.swift; sourceTree = "<group>"; };
-		B1C4F1C526D4104E00617FD9 /* MenuConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuConfigurator.swift; sourceTree = "<group>"; };
 		B1C4F1C826D4113900617FD9 /* MenuBtnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBtnView.swift; sourceTree = "<group>"; };
 		B1C4F1CE26D4148500617FD9 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -51,6 +57,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B176D2FB26D8C3DA007CD717 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				B176D2FC26D8C3EE007CD717 /* MenuDependency.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		B176D2FE26D8C617007CD717 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B176D2FF26D8C639007CD717 /* GlobalNavigationViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		B1C4F19426D3DF8D00617FD9 = {
 			isa = PBXGroup;
 			children = (
@@ -76,11 +98,11 @@
 		B1C4F1BA26D3E52600617FD9 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				B176D2FB26D8C3DA007CD717 /* DI */,
 				B1C4F1C726D4110F00617FD9 /* Views */,
 				B1C4F1BF26D4102C00617FD9 /* MenuPresenter.swift */,
 				B1C4F1C126D4103400617FD9 /* MenuRouter.swift */,
 				B1C4F1C326D4104000617FD9 /* MenuInteractor.swift */,
-				B1C4F1C526D4104E00617FD9 /* MenuConfigurator.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -97,6 +119,8 @@
 		B1C4F1BE26D3E57400617FD9 /* DI */ = {
 			isa = PBXGroup;
 			children = (
+				B176D2F926D8C375007CD717 /* AppDI.swift */,
+				B176D30126D8C697007CD717 /* AppDependency.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -113,6 +137,7 @@
 		B1C4F1CC26D4146200617FD9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B176D2FE26D8C617007CD717 /* UI */,
 				B1C4F1CD26D4146700617FD9 /* Extensions */,
 			);
 			path = Common;
@@ -204,12 +229,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1C4F1CF26D4148500617FD9 /* UIView.swift in Sources */,
+				B176D2FD26D8C3EE007CD717 /* MenuDependency.swift in Sources */,
 				B1C4F1C926D4113900617FD9 /* MenuBtnView.swift in Sources */,
+				B176D2FA26D8C375007CD717 /* AppDI.swift in Sources */,
 				B1C4F1A526D3DF8D00617FD9 /* ViewController.swift in Sources */,
 				B1C4F1BC26D3E54300617FD9 /* MenuViewController.swift in Sources */,
+				B176D30226D8C697007CD717 /* AppDependency.swift in Sources */,
+				B176D30026D8C639007CD717 /* GlobalNavigationViewController.swift in Sources */,
 				B1C4F1A126D3DF8D00617FD9 /* AppDelegate.swift in Sources */,
 				B1C4F1C426D4104000617FD9 /* MenuInteractor.swift in Sources */,
-				B1C4F1C626D4104E00617FD9 /* MenuConfigurator.swift in Sources */,
 				B1C4F1C226D4103400617FD9 /* MenuRouter.swift in Sources */,
 				B1C4F1C026D4102C00617FD9 /* MenuPresenter.swift in Sources */,
 			);
