@@ -11,6 +11,11 @@
 		B176D2FD26D8C3EE007CD717 /* MenuDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176D2FC26D8C3EE007CD717 /* MenuDependency.swift */; };
 		B176D30026D8C639007CD717 /* GlobalNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176D2FF26D8C639007CD717 /* GlobalNavigationViewController.swift */; };
 		B176D30226D8C697007CD717 /* AppDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176D30126D8C697007CD717 /* AppDependency.swift */; };
+		B176D30926D8EAEE007CD717 /* PicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176D30826D8EAEE007CD717 /* PicturesViewController.swift */; };
+		B176D30B26D8EB02007CD717 /* PicturesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176D30A26D8EB02007CD717 /* PicturesPresenter.swift */; };
+		B176D30D26D8EB0E007CD717 /* PicturesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176D30C26D8EB0E007CD717 /* PicturesRouter.swift */; };
+		B176D30F26D8EB22007CD717 /* PicturesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176D30E26D8EB22007CD717 /* PicturesInteractor.swift */; };
+		B176D31126D8EBFE007CD717 /* PicturesDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176D31026D8EBFE007CD717 /* PicturesDependency.swift */; };
 		B1C4F1A126D3DF8D00617FD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C4F1A026D3DF8D00617FD9 /* AppDelegate.swift */; };
 		B1C4F1A526D3DF8D00617FD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C4F1A426D3DF8D00617FD9 /* ViewController.swift */; };
 		B1C4F1AA26D3DF8F00617FD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1C4F1A926D3DF8F00617FD9 /* Assets.xcassets */; };
@@ -30,6 +35,11 @@
 		B176D2FC26D8C3EE007CD717 /* MenuDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDependency.swift; sourceTree = "<group>"; };
 		B176D2FF26D8C639007CD717 /* GlobalNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalNavigationViewController.swift; sourceTree = "<group>"; };
 		B176D30126D8C697007CD717 /* AppDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependency.swift; sourceTree = "<group>"; };
+		B176D30826D8EAEE007CD717 /* PicturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesViewController.swift; sourceTree = "<group>"; };
+		B176D30A26D8EB02007CD717 /* PicturesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesPresenter.swift; sourceTree = "<group>"; };
+		B176D30C26D8EB0E007CD717 /* PicturesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesRouter.swift; sourceTree = "<group>"; };
+		B176D30E26D8EB22007CD717 /* PicturesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesInteractor.swift; sourceTree = "<group>"; };
+		B176D31026D8EBFE007CD717 /* PicturesDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesDependency.swift; sourceTree = "<group>"; };
 		B1C4F19D26D3DF8D00617FD9 /* PicSplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicSplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1C4F1A026D3DF8D00617FD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1C4F1A426D3DF8D00617FD9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,12 +83,41 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		B176D30526D8EACB007CD717 /* Pictures */ = {
+			isa = PBXGroup;
+			children = (
+				B176D30626D8EAD9007CD717 /* DI */,
+				B176D30726D8EADD007CD717 /* Views */,
+				B176D30A26D8EB02007CD717 /* PicturesPresenter.swift */,
+				B176D30C26D8EB0E007CD717 /* PicturesRouter.swift */,
+				B176D30E26D8EB22007CD717 /* PicturesInteractor.swift */,
+			);
+			path = Pictures;
+			sourceTree = "<group>";
+		};
+		B176D30626D8EAD9007CD717 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				B176D31026D8EBFE007CD717 /* PicturesDependency.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		B176D30726D8EADD007CD717 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B176D30826D8EAEE007CD717 /* PicturesViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		B1C4F19426D3DF8D00617FD9 = {
 			isa = PBXGroup;
 			children = (
 				B1C4F1CC26D4146200617FD9 /* Common */,
 				B1C4F1BD26D3E56900617FD9 /* App */,
 				B1C4F1BA26D3E52600617FD9 /* Menu */,
+				B176D30526D8EACB007CD717 /* Pictures */,
 				B1C4F1A426D3DF8D00617FD9 /* ViewController.swift */,
 				B1C4F1A926D3DF8F00617FD9 /* Assets.xcassets */,
 				B1C4F1AB26D3DF8F00617FD9 /* LaunchScreen.storyboard */,
@@ -236,10 +275,15 @@
 				B1C4F1BC26D3E54300617FD9 /* MenuViewController.swift in Sources */,
 				B176D30226D8C697007CD717 /* AppDependency.swift in Sources */,
 				B176D30026D8C639007CD717 /* GlobalNavigationViewController.swift in Sources */,
+				B176D30926D8EAEE007CD717 /* PicturesViewController.swift in Sources */,
+				B176D31126D8EBFE007CD717 /* PicturesDependency.swift in Sources */,
 				B1C4F1A126D3DF8D00617FD9 /* AppDelegate.swift in Sources */,
 				B1C4F1C426D4104000617FD9 /* MenuInteractor.swift in Sources */,
 				B1C4F1C226D4103400617FD9 /* MenuRouter.swift in Sources */,
+				B176D30D26D8EB0E007CD717 /* PicturesRouter.swift in Sources */,
+				B176D30F26D8EB22007CD717 /* PicturesInteractor.swift in Sources */,
 				B1C4F1C026D4102C00617FD9 /* MenuPresenter.swift in Sources */,
+				B176D30B26D8EB02007CD717 /* PicturesPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

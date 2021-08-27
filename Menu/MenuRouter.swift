@@ -37,6 +37,12 @@ final class MenuRouter {
 // MARK: MenuRoutingLogic
 extension MenuRouter: MenuRoutingLogic {
     func routeTo(target: Targets) {
-        
+        switch target {
+        case .pictures:
+            let picturesRouter: PicturesRouter = AppDI.resolve()
+            picturesRouter.start()
+        case .favorites:
+            print(#function)
+        }
     }
 }

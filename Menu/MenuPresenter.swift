@@ -14,7 +14,8 @@ protocol MenuPresentationLogic: AnyObject {
 
 /// Протокол для работы c MenuPresenter из MenuViewController
 protocol MenuViewControllerOutput {
-    
+    /// Открыть экран картинок
+    func openPictures()
 }
 
 final class MenuPresenter {
@@ -37,7 +38,10 @@ extension MenuPresenter: MenuPresentationLogic{
 
 // MARK: MenuViewControllerOutput
 extension MenuPresenter: MenuViewControllerOutput {
-    
+    /// Открыть экран картинок
+    func openPictures() {
+        router?.routeTo(target: .pictures)
+    }
 }
 
 

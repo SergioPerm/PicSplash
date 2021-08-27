@@ -51,6 +51,9 @@ private extension MenuViewController {
         
         view.addSubview(picturesView)
         view.addSubview(favoritesView)
+        
+        let picturesTap = UITapGestureRecognizer(target: self, action: #selector(openPictures))
+        picturesView.addGestureRecognizer(picturesTap)
     }
 }
 
@@ -74,6 +77,13 @@ private extension MenuViewController {
             make.width.height.equalTo(btnSide)
         })
         
+    }
+}
+
+//MARK: Actions
+private extension MenuViewController {
+    @objc func openPictures() {
+        presenter?.openPictures()
     }
 }
 
