@@ -10,12 +10,15 @@ import Foundation
 
 /// Протокол работы с MenuPresenter
 protocol PicturesPresentationLogic: AnyObject {
-    
+    /// Загрузить картинки
+    /// - Parameter picturesObjects: Массив объектов картинок
+    func loadPictures(picturesObjects: [Picture])
 }
 
 /// Протокол для работы c MenuPresenter из MenuViewController
 protocol PicturesViewControllerOutput {
-
+    /// Перезагрузить картинки
+    func loadPictures()
 }
 
 final class PicturesPresenter {
@@ -33,10 +36,20 @@ final class PicturesPresenter {
 
 // MARK: MenuPresentationLogic
 extension PicturesPresenter: PicturesPresentationLogic{
-    
+    func loadPictures(picturesObjects: [Picture]) {
+        var viewModels: [PictureViewModelType] = []
+        
+        picturesObjects.forEach({
+            viewModels.append(PictureViewModel(picture: $0))
+        })
+        
+        viewController?.reloadPictures(pictures: viewModels)
+    }
 }
 
 // MARK: MenuViewControllerOutput
 extension PicturesPresenter: PicturesViewControllerOutput {
-
+    func loadPictures() {
+        interactor?.loadPictures()
+    }
 }
