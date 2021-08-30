@@ -13,12 +13,17 @@ protocol PicturesPresentationLogic: AnyObject {
     /// Загрузить картинки
     /// - Parameter picturesObjects: Массив объектов картинок
     func loadPictures(picturesObjects: [Picture])
+    /// Загрузить картинки постранично
+    /// - Parameter picturesObjects: Массив объектов картинок
+    func loadPicturesFromPage(picturesObjects: [Picture])
 }
 
 /// Протокол для работы c MenuPresenter из MenuViewController
 protocol PicturesViewControllerOutput {
     /// Перезагрузить картинки
     func loadPictures()
+    /// Загрузить новую страницу картинок
+    func loadPicturesNewPage()
 }
 
 final class PicturesPresenter {
@@ -45,11 +50,27 @@ extension PicturesPresenter: PicturesPresentationLogic{
         
         viewController?.reloadPictures(pictures: viewModels)
     }
+    
+    /// Загрузить картинки постранично
+    /// - Parameter picturesObjects: Массив объектов картинок
+    func loadPicturesFromPage(picturesObjects: [Picture]) {
+        var viewModels: [PictureViewModelType] = []
+        
+        picturesObjects.forEach({
+            viewModels.append(PictureViewModel(picture: $0))
+        })
+        
+        viewController?.addPictures(pictures: viewModels)
+    }
 }
 
 // MARK: MenuViewControllerOutput
 extension PicturesPresenter: PicturesViewControllerOutput {
     func loadPictures() {
         interactor?.loadPictures()
+    }
+    /// Загрузить новую страницу картинок
+    func loadPicturesNewPage() {
+        interactor?.loadPicturesWithPaging()
     }
 }

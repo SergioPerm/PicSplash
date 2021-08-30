@@ -13,6 +13,9 @@ protocol PicturesDisplayLogic: AnyObject {
     /// Полностью перезагрузить картинки
     /// - Parameter ads: viewModels картинок
     func reloadPictures(pictures: [PictureViewModelType])
+    /// Добавить картинки к текущим
+    /// - Parameter pictures: viewModels картинок
+    func addPictures(pictures: [PictureViewModelType])
 }
 
 class PicturesViewController: UIViewController {
@@ -38,12 +41,15 @@ class PicturesViewController: UIViewController {
     private let collectionMinimumItemSpacing: CGFloat = 4.0
     private let collectionSectionInsets: UIEdgeInsets = UIEdgeInsets(top: 4.0, left: 4.0, bottom: 4.0, right: 4.0)
     
+    /// SupplementaryView для футера collectionview, отображается при постраничной загрузке
+    private var pageLoadView: PicturesBottomLoaderViewType?
+    
     /// Refresh control для collection view
     private let refreshControl = UIRefreshControl()
     
     /// Признак процесса загрузки страницы
     private var loadPage: Bool = false
-        
+            
     // MARK: ViewModels
     private var viewModels: [PictureViewModelType] = []
     
@@ -60,22 +66,29 @@ class PicturesViewController: UIViewController {
 // MARK: Setup
 private extension PicturesViewController {
     func setup() {
+        
+        navigationController?.isNavigationBarHidden = false
+        
         view.backgroundColor = .white
         
         view.addSubview(collectionView)
         
+        refreshControl.addTarget(self, action: #selector(didPullToRefresh(_:)), for: .valueChanged)
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.alwaysBounceVertical = true
+        collectionView.refreshControl = refreshControl
         
         guard let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
         
-        collectionView.register(PictureCollectionViewCell.self, forCellWithReuseIdentifier: PictureCollectionViewCell.identifier)
+        PictureCollectionViewCell.register(collectionView)
+        collectionView.register(PicturesBottomLoaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "PicturesBottomLoaderView")
         
         layout.sectionInset = collectionSectionInsets
         layout.minimumLineSpacing = collectionMinimumItemSpacing
         layout.minimumInteritemSpacing = collectionMinimumItemSpacing
-        //layout.footerReferenceSize = CGSize(width: collectionView.bounds.width, height: 30)
+        layout.footerReferenceSize = CGSize(width: collectionView.bounds.width, height: 30)
     }
 }
 
@@ -88,13 +101,43 @@ private extension PicturesViewController {
     }
 }
 
+// MARK: Actions
+private extension PicturesViewController {
+    @objc func didPullToRefresh(_ sender: Any) {
+        presenter?.loadPictures()
+    }
+}
+
 // MARK: PicturesDisplayLogic
 extension PicturesViewController: PicturesDisplayLogic {
     /// Полностью перезагрузить картинки
     /// - Parameter ads: viewModels картинок
     func reloadPictures(pictures: [PictureViewModelType]) {
+        if refreshControl.isRefreshing {
+            refreshControl.endRefreshing()
+        }
+        
         viewModels = pictures
         collectionView.reloadData()
+    }
+    /// Добавить картинки к текущим
+    /// - Parameter pictures: viewModels картинок
+    func addPictures(pictures: [PictureViewModelType]) {
+        self.loadPage = false
+        pageLoadView?.hide()
+
+        collectionView.performBatchUpdates({
+                        
+            var newIndex = viewModels.count - 1
+            if !pictures.isEmpty {
+                self.viewModels.append(contentsOf: pictures)
+                let insertIndexPaths = pictures.map { _ -> IndexPath in
+                    newIndex += 1
+                    return IndexPath(row: newIndex, section: 0)
+                }
+                collectionView.insertItems(at: insertIndexPaths)
+            }
+        }, completion: nil)
     }
 }
 
@@ -116,6 +159,7 @@ extension PicturesViewController: UICollectionViewDelegate, UICollectionViewDele
     }
 }
 
+// MARK: UICollectionViewDataSource
 extension PicturesViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModels.count
@@ -128,5 +172,31 @@ extension PicturesViewController: UICollectionViewDataSource {
         }
         
         return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionFooter, let loadView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "PicturesBottomLoaderView", for: indexPath) as? PicturesBottomLoaderView {
+
+            if pageLoadView == nil {
+                pageLoadView = loadView
+            }
+            
+            if !loadPage {
+                pageLoadView?.hide()
+            } else {
+                pageLoadView?.show()
+            }
+            
+            return loadView
+        }
+        return UICollectionReusableView()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if !loadPage && indexPath.row == viewModels.count - 1 {
+            loadPage = true
+
+            presenter?.loadPicturesNewPage()
+        }
     }
 }
