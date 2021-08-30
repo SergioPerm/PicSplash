@@ -80,6 +80,6 @@ final class PictureViewModel: PictureViewModelType, PictureViewModelInputs, Pict
     }
     /// Усредненный цвет фото
     var avgColorHex: String {
-        return picture.avg_color
+        return picture.avgColor
     }
 }

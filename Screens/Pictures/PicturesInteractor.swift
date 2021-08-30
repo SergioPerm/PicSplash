@@ -19,22 +19,31 @@ final class PicturesInteractor {
 
 // MARK: MenuBusinessLogic
 extension PicturesInteractor: PicturesBusinessLogic {
+    private func createURLFromParameters(parameters: [String:Any]) -> URL? {
+
+        var components = URLComponents()
+        components.scheme = "https"
+        components.host   = "api.pexels.com"
+        components.path   = "/v1/curated"
+
+        if !parameters.isEmpty {
+            components.queryItems = [URLQueryItem]()
+            for (key, value) in parameters {
+                let queryItem = URLQueryItem(name: key, value: "\(value)")
+                components.queryItems!.append(queryItem)
+            }
+        }
+
+        return components.url
+    }
+    
+    
     /// Загрузить картинки
     func loadPictures() {
-        
-        var pics: [Picture] = []
-        pics.append(contentsOf: [
-            Picture(id: 0, photographer: "Ololoev Ivan", avg_color: "#D2FFBD", src: Source(tiny: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=200&w=280")),
-            Picture(id: 0, photographer: "Ololoev Ivan", avg_color: "#D2FFBD", src: Source(tiny: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=200&w=280")),
-            Picture(id: 0, photographer: "Ololoev Ivan", avg_color: "#D2FFBD", src: Source(tiny: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=200&w=280")),
-            Picture(id: 0, photographer: "Ololoev Ivan", avg_color: "#D2FFBD", src: Source(tiny: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=200&w=280")),
-            Picture(id: 0, photographer: "Ololoev Ivan", avg_color: "#D2FFBD", src: Source(tiny: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=200&w=280")),
-            Picture(id: 0, photographer: "Ololoev Ivan", avg_color: "#D2FFBD", src: Source(tiny: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=200&w=280")),
-            Picture(id: 0, photographer: "Ololoev Ivan", avg_color: "#D2FFBD", src: Source(tiny: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=200&w=280")),
-            Picture(id: 0, photographer: "Ololoev Ivan", avg_color: "#D2FFBD", src: Source(tiny: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=200&w=280"))
-        ])
-        
-        presenter?.loadPictures(picturesObjects: pics)
-        
+        PicturesAPI.getPictures(page: 1, perPage: 8).then { [weak self] response in
+            self?.presenter?.loadPictures(picturesObjects: response.photos)
+        }.catch { error in
+            print("error")
+        }
     }
 }

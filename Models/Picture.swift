@@ -10,7 +10,7 @@ import Foundation
 struct Picture: Codable {
     var id: Int
     var photographer: String
-    var avg_color: String
+    var avgColor: String
     var src: Source
 }
 

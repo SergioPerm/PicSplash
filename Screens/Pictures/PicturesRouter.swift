@@ -25,7 +25,7 @@ final class PicturesRouter {
     func start() {
         guard let view = picturesViewProvider?.value else { return }
         
-        navigationController?.pushViewController(view, animated: false)
+        navigationController?.pushViewController(view, animated: true)
     }
     
     enum Targets {

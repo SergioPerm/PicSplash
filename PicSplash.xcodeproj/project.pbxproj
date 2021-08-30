@@ -7,8 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B11E0DBC26DD1EB1000D01C9 /* PromisesTestHelpers in Frameworks */ = {isa = PBXBuildFile; productRef = B11E0DBB26DD1EB1000D01C9 /* PromisesTestHelpers */; };
+		B11E0DBE26DD1EB1000D01C9 /* Promises in Frameworks */ = {isa = PBXBuildFile; productRef = B11E0DBD26DD1EB1000D01C9 /* Promises */; };
+		B11E0DC026DD1EB1000D01C9 /* FBLPromises in Frameworks */ = {isa = PBXBuildFile; productRef = B11E0DBF26DD1EB1000D01C9 /* FBLPromises */; };
+		B11E0DC226DD1EB1000D01C9 /* FBLPromisesTestHelpers in Frameworks */ = {isa = PBXBuildFile; productRef = B11E0DC126DD1EB1000D01C9 /* FBLPromisesTestHelpers */; };
+		B11E0DC526DD227D000D01C9 /* PicturesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11E0DC426DD227D000D01C9 /* PicturesRequest.swift */; };
+		B11E0DC726DD2519000D01C9 /* PicturesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11E0DC626DD2519000D01C9 /* PicturesResponse.swift */; };
+		B11E0DC926DD2818000D01C9 /* PicturesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11E0DC826DD2818000D01C9 /* PicturesAPI.swift */; };
+		B130015826DD152E00D849CA /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B130015726DD152E00D849CA /* HTTPRequest.swift */; };
+		B130015A26DD16FD00D849CA /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B130015926DD16FD00D849CA /* Consts.swift */; };
 		B16C400C26DA2398005DB8EF /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16C400B26DA2398005DB8EF /* UIImageView.swift */; };
 		B16C400E26DA25F2005DB8EF /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16C400D26DA25F2005DB8EF /* UIColor.swift */; };
+		B16C401226DA2C80005DB8EF /* PicSplashNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16C401126DA2C80005DB8EF /* PicSplashNetwork.swift */; };
 		B176D2FA26D8C375007CD717 /* AppDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176D2F926D8C375007CD717 /* AppDI.swift */; };
 		B176D2FD26D8C3EE007CD717 /* MenuDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176D2FC26D8C3EE007CD717 /* MenuDependency.swift */; };
 		B176D30026D8C639007CD717 /* GlobalNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176D2FF26D8C639007CD717 /* GlobalNavigationViewController.swift */; };
@@ -37,8 +47,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B11E0DC426DD227D000D01C9 /* PicturesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesRequest.swift; sourceTree = "<group>"; };
+		B11E0DC626DD2519000D01C9 /* PicturesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesResponse.swift; sourceTree = "<group>"; };
+		B11E0DC826DD2818000D01C9 /* PicturesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesAPI.swift; sourceTree = "<group>"; };
+		B130015726DD152E00D849CA /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
+		B130015926DD16FD00D849CA /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
 		B16C400B26DA2398005DB8EF /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		B16C400D26DA25F2005DB8EF /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		B16C401126DA2C80005DB8EF /* PicSplashNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicSplashNetwork.swift; sourceTree = "<group>"; };
 		B176D2F926D8C375007CD717 /* AppDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDI.swift; sourceTree = "<group>"; };
 		B176D2FC26D8C3EE007CD717 /* MenuDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDependency.swift; sourceTree = "<group>"; };
 		B176D2FF26D8C639007CD717 /* GlobalNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalNavigationViewController.swift; sourceTree = "<group>"; };
@@ -71,7 +87,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B11E0DBC26DD1EB1000D01C9 /* PromisesTestHelpers in Frameworks */,
+				B11E0DC226DD1EB1000D01C9 /* FBLPromisesTestHelpers in Frameworks */,
 				B1C4F1B626D3E4D400617FD9 /* DITranquillity in Frameworks */,
+				B11E0DC026DD1EB1000D01C9 /* FBLPromises in Frameworks */,
+				B11E0DBE26DD1EB1000D01C9 /* Promises in Frameworks */,
 				B1C4F1B926D3E51100617FD9 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,6 +99,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B11E0DC326DD2267000D01C9 /* PicturesAPI */ = {
+			isa = PBXGroup;
+			children = (
+				B11E0DC426DD227D000D01C9 /* PicturesRequest.swift */,
+				B11E0DC626DD2519000D01C9 /* PicturesResponse.swift */,
+				B11E0DC826DD2818000D01C9 /* PicturesAPI.swift */,
+			);
+			path = PicturesAPI;
+			sourceTree = "<group>";
+		};
+		B16C400F26DA2C5F005DB8EF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B16C401026DA2C6B005DB8EF /* Network */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B16C401026DA2C6B005DB8EF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B16C401126DA2C80005DB8EF /* PicSplashNetwork.swift */,
+				B130015726DD152E00D849CA /* HTTPRequest.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		B176D2FB26D8C3DA007CD717 /* DI */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +145,7 @@
 		B176D30526D8EACB007CD717 /* Pictures */ = {
 			isa = PBXGroup;
 			children = (
+				B11E0DC326DD2267000D01C9 /* PicturesAPI */,
 				B176D30626D8EAD9007CD717 /* DI */,
 				B176D30726D8EADD007CD717 /* Views */,
 				B176D30A26D8EB02007CD717 /* PicturesPresenter.swift */,
@@ -174,6 +222,7 @@
 				B1C4F1BD26D3E56900617FD9 /* App */,
 				B176D31C26D8F8C0007CD717 /* Models */,
 				B176D31B26D8F895007CD717 /* Screens */,
+				B16C400F26DA2C5F005DB8EF /* Services */,
 				B1C4F1A926D3DF8F00617FD9 /* Assets.xcassets */,
 				B1C4F1AB26D3DF8F00617FD9 /* LaunchScreen.storyboard */,
 				B1C4F1AE26D3DF8F00617FD9 /* Info.plist */,
@@ -234,6 +283,7 @@
 				B176D31526D8EFA3007CD717 /* Helpers */,
 				B176D2FE26D8C617007CD717 /* UI */,
 				B1C4F1CD26D4146700617FD9 /* Extensions */,
+				B130015926DD16FD00D849CA /* Consts.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -267,6 +317,10 @@
 			packageProductDependencies = (
 				B1C4F1B526D3E4D400617FD9 /* DITranquillity */,
 				B1C4F1B826D3E51100617FD9 /* SnapKit */,
+				B11E0DBB26DD1EB1000D01C9 /* PromisesTestHelpers */,
+				B11E0DBD26DD1EB1000D01C9 /* Promises */,
+				B11E0DBF26DD1EB1000D01C9 /* FBLPromises */,
+				B11E0DC126DD1EB1000D01C9 /* FBLPromisesTestHelpers */,
 			);
 			productName = PicSplash;
 			productReference = B1C4F19D26D3DF8D00617FD9 /* PicSplash.app */;
@@ -298,6 +352,7 @@
 			packageReferences = (
 				B1C4F1B426D3E4D400617FD9 /* XCRemoteSwiftPackageReference "DITranquillity" */,
 				B1C4F1B726D3E51100617FD9 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				B11E0DBA26DD1EB1000D01C9 /* XCRemoteSwiftPackageReference "promises" */,
 			);
 			productRefGroup = B1C4F19E26D3DF8D00617FD9 /* Products */;
 			projectDirPath = "";
@@ -327,6 +382,8 @@
 			files = (
 				B1C4F1CF26D4148500617FD9 /* UIView.swift in Sources */,
 				B176D2FD26D8C3EE007CD717 /* MenuDependency.swift in Sources */,
+				B130015826DD152E00D849CA /* HTTPRequest.swift in Sources */,
+				B130015A26DD16FD00D849CA /* Consts.swift in Sources */,
 				B1C4F1C926D4113900617FD9 /* MenuBtnView.swift in Sources */,
 				B176D2FA26D8C375007CD717 /* AppDI.swift in Sources */,
 				B176D31726D8EFAA007CD717 /* CollectionViewCellType.swift in Sources */,
@@ -334,10 +391,13 @@
 				B176D32026D91A08007CD717 /* PictureLoader.swift in Sources */,
 				B176D30226D8C697007CD717 /* AppDependency.swift in Sources */,
 				B176D31A26D8EFE3007CD717 /* PictureViewModel.swift in Sources */,
+				B11E0DC526DD227D000D01C9 /* PicturesRequest.swift in Sources */,
 				B176D30026D8C639007CD717 /* GlobalNavigationViewController.swift in Sources */,
 				B16C400E26DA25F2005DB8EF /* UIColor.swift in Sources */,
 				B176D31426D8EF64007CD717 /* PictureCollectionViewCell.swift in Sources */,
+				B11E0DC726DD2519000D01C9 /* PicturesResponse.swift in Sources */,
 				B176D30926D8EAEE007CD717 /* PicturesViewController.swift in Sources */,
+				B16C401226DA2C80005DB8EF /* PicSplashNetwork.swift in Sources */,
 				B176D31126D8EBFE007CD717 /* PicturesDependency.swift in Sources */,
 				B1C4F1A126D3DF8D00617FD9 /* AppDelegate.swift in Sources */,
 				B1C4F1C426D4104000617FD9 /* MenuInteractor.swift in Sources */,
@@ -346,6 +406,7 @@
 				B176D31E26D8F937007CD717 /* Picture.swift in Sources */,
 				B16C400C26DA2398005DB8EF /* UIImageView.swift in Sources */,
 				B176D30F26D8EB22007CD717 /* PicturesInteractor.swift in Sources */,
+				B11E0DC926DD2818000D01C9 /* PicturesAPI.swift in Sources */,
 				B1C4F1C026D4102C00617FD9 /* MenuPresenter.swift in Sources */,
 				B176D30B26D8EB02007CD717 /* PicturesPresenter.swift in Sources */,
 			);
@@ -545,6 +606,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B11E0DBA26DD1EB1000D01C9 /* XCRemoteSwiftPackageReference "promises" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/promises.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		B1C4F1B426D3E4D400617FD9 /* XCRemoteSwiftPackageReference "DITranquillity" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ivlevAstef/DITranquillity";
@@ -564,6 +633,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B11E0DBB26DD1EB1000D01C9 /* PromisesTestHelpers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B11E0DBA26DD1EB1000D01C9 /* XCRemoteSwiftPackageReference "promises" */;
+			productName = PromisesTestHelpers;
+		};
+		B11E0DBD26DD1EB1000D01C9 /* Promises */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B11E0DBA26DD1EB1000D01C9 /* XCRemoteSwiftPackageReference "promises" */;
+			productName = Promises;
+		};
+		B11E0DBF26DD1EB1000D01C9 /* FBLPromises */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B11E0DBA26DD1EB1000D01C9 /* XCRemoteSwiftPackageReference "promises" */;
+			productName = FBLPromises;
+		};
+		B11E0DC126DD1EB1000D01C9 /* FBLPromisesTestHelpers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B11E0DBA26DD1EB1000D01C9 /* XCRemoteSwiftPackageReference "promises" */;
+			productName = FBLPromisesTestHelpers;
+		};
 		B1C4F1B526D3E4D400617FD9 /* DITranquillity */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B1C4F1B426D3E4D400617FD9 /* XCRemoteSwiftPackageReference "DITranquillity" */;
