@@ -22,7 +22,6 @@ class PictureCollectionViewCell: UICollectionViewCell, CollectionViewCellType {
     private let backView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        //view.backgroundColor = .gray
         view.layer.cornerRadius = 10
         view.clipsToBounds = true
         
@@ -113,8 +112,11 @@ private extension PictureCollectionViewCell {
     func bindViewModel() {
         guard let viewModel = viewModel, let imageURL = NSURL(string: viewModel.outputs.imageUrl) else { return }
   
+        imageView.contentMode = .center
+        imageView.image = UIImage(named: "placeholder")
         imageView.asyncLoad(url: imageURL) { [weak self] image in
             guard let `self` = self else { return }
+            self.imageView.contentMode = .scaleAspectFill
             self.imageView.image = image
         }
         

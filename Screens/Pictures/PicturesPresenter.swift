@@ -24,11 +24,17 @@ protocol PicturesViewControllerOutput {
     func loadPictures()
     /// Загрузить новую страницу картинок
     func loadPicturesNewPage()
+    /// Установить данные поиска
+    /// - Parameter queryString: Строка поиска
+    func setQuery(queryString: String)
 }
 
 final class PicturesPresenter {
     let interactor: PicturesBusinessLogic?
     let router: PicturesRoutingLogic?
+    
+    private var currentQueryString = ""
+    private let minQueryCountChars = 3
     
     weak var viewController: PicturesDisplayLogic?
     
@@ -71,6 +77,26 @@ extension PicturesPresenter: PicturesViewControllerOutput {
     }
     /// Загрузить новую страницу картинок
     func loadPicturesNewPage() {
-        interactor?.loadPicturesWithPaging()
+        
+        if currentQueryString.isEmpty {
+            interactor?.loadPicturesWithPaging()
+        } else {
+            interactor?.loadPicturesByQueryWithPaging(queryString: currentQueryString)
+        }
+    }
+    /// Установить данные поиска
+    /// - Parameter queryString: Строка поиска
+    func setQuery(queryString: String) {
+        if queryString.isEmpty && !currentQueryString.isEmpty {
+            currentQueryString = ""
+            interactor?.loadPictures()
+            return
+        } else if queryString.count < minQueryCountChars {
+            currentQueryString = ""
+            return
+        }
+        
+        currentQueryString = queryString
+        interactor?.loadPicturesByQuery(queryString: queryString)
     }
 }

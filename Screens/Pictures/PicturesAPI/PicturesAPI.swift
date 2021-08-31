@@ -14,4 +14,10 @@ struct PicturesAPI {
         
         return networkService.request(PicturesRequest.getPictures(page: page, perPage: perPage))
     }
+    
+    static func getPicturesByQuery(queryString: String, page: Int, perPage: Int) -> Promise<PicturesResponse> {
+        let networkService: PicSplashNetwork = AppDI.resolve()
+        
+        return networkService.request(PicturesRequest.getPicturesByQuery(queryString: queryString, page: page, perPage: perPage))
+    }
 }

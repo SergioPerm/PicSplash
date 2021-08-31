@@ -47,6 +47,9 @@ class PicturesViewController: UIViewController {
     /// Refresh control для collection view
     private let refreshControl = UIRefreshControl()
     
+    /// Search controller для поиска картинок
+    private let searchController: UISearchController = UISearchController()
+    
     /// Признак процесса загрузки страницы
     private var loadPage: Bool = false
             
@@ -89,6 +92,14 @@ private extension PicturesViewController {
         layout.minimumLineSpacing = collectionMinimumItemSpacing
         layout.minimumInteritemSpacing = collectionMinimumItemSpacing
         layout.footerReferenceSize = CGSize(width: collectionView.bounds.width, height: 30)
+        
+        //searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.delegate = self
+        searchController.searchBar.showsCancelButton = true
+        
+        navigationItem.searchController = searchController
     }
 }
 
@@ -198,5 +209,18 @@ extension PicturesViewController: UICollectionViewDataSource {
 
             presenter?.loadPicturesNewPage()
         }
+    }
+}
+
+//MARK: UISearchBarDelegate
+extension PicturesViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let searchText = searchController.searchBar.text {
+            presenter?.setQuery(queryString: searchText)
+        }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        presenter?.setQuery(queryString: "")
     }
 }

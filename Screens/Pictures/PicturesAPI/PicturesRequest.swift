@@ -9,12 +9,13 @@ import Foundation
 
 enum PicturesRequest {
     case getPictures(page: Int, perPage: Int)
+    case getPicturesByQuery(queryString: String, page: Int, perPage: Int)
 }
 
 extension PicturesRequest: HTTPRequest {
     var scheme: HTTPScheme {
         switch self {
-        case .getPictures:
+        case .getPictures, .getPicturesByQuery:
             return .https
         }
     }
@@ -23,12 +24,14 @@ extension PicturesRequest: HTTPRequest {
         switch self {
         case .getPictures:
             return "/v1/curated"
+        case .getPicturesByQuery:
+            return "/v1/search"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .getPictures:
+        case .getPictures, .getPicturesByQuery:
             return .GET
         }
     }
@@ -51,6 +54,15 @@ extension PicturesRequest: HTTPRequest {
             params["per_page"] = perPage
             
             return params
+        case .getPicturesByQuery(let queryString, let page, let perPage):
+            var params = [String: Any]()
+            
+            params["query"] = queryString
+            params["page"] = page
+            params["per_page"] = perPage
+            
+            return params
+            
         }
     }
 }
