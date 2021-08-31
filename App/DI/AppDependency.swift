@@ -11,5 +11,6 @@ import DITranquillity
 class AppDependency: DIPart {
     static func load(container: DIContainer) {
         container.register{GlobalNavigationViewController()}.lifetime(.perRun(.strong))
+        container.register{PicSplashNetwork()}.lifetime(.perRun(.strong))
     }
 }

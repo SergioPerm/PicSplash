@@ -15,6 +15,7 @@ class AppDI {
         DISetting.Log.level = .warning
         AppDependency.load(container: container)
         MenuDependency.load(container: container)
+        PicturesDependency.load(container: container)
         
         container.initializeSingletonObjects()
     }

@@ -40,17 +40,28 @@ final class MenuViewController: UIViewController {
         setupConstraints()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }
+    
 }
 
 // MARK: Setup
 private extension MenuViewController {
     func setup() {
-        navigationController?.isNavigationBarHidden = true
-        
         view.backgroundColor = #colorLiteral(red: 0.9589239691, green: 0.9589239691, blue: 0.9589239691, alpha: 1)
         
         view.addSubview(picturesView)
         view.addSubview(favoritesView)
+        
+        let picturesTap = UITapGestureRecognizer(target: self, action: #selector(openPictures))
+        picturesView.addGestureRecognizer(picturesTap)
     }
 }
 
@@ -74,6 +85,13 @@ private extension MenuViewController {
             make.width.height.equalTo(btnSide)
         })
         
+    }
+}
+
+//MARK: Actions
+private extension MenuViewController {
+    @objc func openPictures() {
+        presenter?.openPictures()
     }
 }
 
