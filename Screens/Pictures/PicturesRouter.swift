@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftLazy
+import DITranquillity
 
 /// Протокол для работы с MenuRouter из Presenter
 protocol PicturesRoutingLogic {
@@ -29,13 +30,17 @@ final class PicturesRouter {
     }
     
     enum Targets {
-        case detailPicture
+        case detailPicture(picture: Picture)
     }
 }
 
 // MARK: MenuRoutingLogic
 extension PicturesRouter: PicturesRoutingLogic {
     func routeTo(target: Targets) {
-        
+        switch target {
+        case .detailPicture(let picture):
+            let pictureDetailRouter: PictureDetailRouter = AppDI.resolve()
+            pictureDetailRouter.start(picture: picture)
+        }
     }
 }

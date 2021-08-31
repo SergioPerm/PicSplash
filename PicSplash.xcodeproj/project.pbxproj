@@ -45,7 +45,27 @@
 		B1C4F1C426D4104000617FD9 /* MenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C4F1C326D4104000617FD9 /* MenuInteractor.swift */; };
 		B1C4F1C926D4113900617FD9 /* MenuBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C4F1C826D4113900617FD9 /* MenuBtnView.swift */; };
 		B1C4F1CF26D4148500617FD9 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C4F1CE26D4148500617FD9 /* UIView.swift */; };
+		B1D2A19B26DE966000DA40A8 /* PictureDetailAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D2A19A26DE966000DA40A8 /* PictureDetailAPI.swift */; };
+		B1F8E1EE26DE2EA1004F96E1 /* PictureDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F8E1ED26DE2EA1004F96E1 /* PictureDetailPresenter.swift */; };
+		B1F8E1F026DE2EB0004F96E1 /* PictureDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F8E1EF26DE2EB0004F96E1 /* PictureDetailRouter.swift */; };
+		B1F8E1F226DE2EBD004F96E1 /* PictureDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F8E1F126DE2EBD004F96E1 /* PictureDetailViewController.swift */; };
+		B1F8E1F426DE2EE0004F96E1 /* PictureDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F8E1F326DE2EE0004F96E1 /* PictureDetailInteractor.swift */; };
+		B1F8E1F726DE32A9004F96E1 /* PictureDetailDependecy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F8E1F626DE32A9004F96E1 /* PictureDetailDependecy.swift */; };
+		B1F8E20726DE5FEF004F96E1 /* PictureDetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F8E20626DE5FEF004F96E1 /* PictureDetailAssembly.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B1F8E1FE26DE5D78004F96E1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B11E0DC426DD227D000D01C9 /* PicturesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesRequest.swift; sourceTree = "<group>"; };
@@ -82,6 +102,13 @@
 		B1C4F1C326D4104000617FD9 /* MenuInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInteractor.swift; sourceTree = "<group>"; };
 		B1C4F1C826D4113900617FD9 /* MenuBtnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBtnView.swift; sourceTree = "<group>"; };
 		B1C4F1CE26D4148500617FD9 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		B1D2A19A26DE966000DA40A8 /* PictureDetailAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDetailAPI.swift; sourceTree = "<group>"; };
+		B1F8E1ED26DE2EA1004F96E1 /* PictureDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDetailPresenter.swift; sourceTree = "<group>"; };
+		B1F8E1EF26DE2EB0004F96E1 /* PictureDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDetailRouter.swift; sourceTree = "<group>"; };
+		B1F8E1F126DE2EBD004F96E1 /* PictureDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDetailViewController.swift; sourceTree = "<group>"; };
+		B1F8E1F326DE2EE0004F96E1 /* PictureDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDetailInteractor.swift; sourceTree = "<group>"; };
+		B1F8E1F626DE32A9004F96E1 /* PictureDetailDependecy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDetailDependecy.swift; sourceTree = "<group>"; };
+		B1F8E20626DE5FEF004F96E1 /* PictureDetailAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDetailAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,8 +231,9 @@
 		B176D31B26D8F895007CD717 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				B1C4F1BA26D3E52600617FD9 /* Menu */,
 				B176D30526D8EACB007CD717 /* Pictures */,
+				B1C4F1BA26D3E52600617FD9 /* Menu */,
+				B1F8E1EB26DE2E78004F96E1 /* PictureDetail */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -301,6 +329,44 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		B1D2A19926DE963E00DA40A8 /* PictureDetailAPI */ = {
+			isa = PBXGroup;
+			children = (
+				B1D2A19A26DE966000DA40A8 /* PictureDetailAPI.swift */,
+			);
+			path = PictureDetailAPI;
+			sourceTree = "<group>";
+		};
+		B1F8E1EB26DE2E78004F96E1 /* PictureDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B1D2A19926DE963E00DA40A8 /* PictureDetailAPI */,
+				B1F8E1F526DE3298004F96E1 /* DI */,
+				B1F8E1EC26DE2E92004F96E1 /* Views */,
+				B1F8E1ED26DE2EA1004F96E1 /* PictureDetailPresenter.swift */,
+				B1F8E1EF26DE2EB0004F96E1 /* PictureDetailRouter.swift */,
+				B1F8E1F326DE2EE0004F96E1 /* PictureDetailInteractor.swift */,
+			);
+			path = PictureDetail;
+			sourceTree = "<group>";
+		};
+		B1F8E1EC26DE2E92004F96E1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B1F8E1F126DE2EBD004F96E1 /* PictureDetailViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B1F8E1F526DE3298004F96E1 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				B1F8E1F626DE32A9004F96E1 /* PictureDetailDependecy.swift */,
+				B1F8E20626DE5FEF004F96E1 /* PictureDetailAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -311,6 +377,7 @@
 				B1C4F19926D3DF8D00617FD9 /* Sources */,
 				B1C4F19A26D3DF8D00617FD9 /* Frameworks */,
 				B1C4F19B26D3DF8D00617FD9 /* Resources */,
+				B1F8E1FE26DE5D78004F96E1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -383,12 +450,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1F8E1EE26DE2EA1004F96E1 /* PictureDetailPresenter.swift in Sources */,
 				B1C4F1CF26D4148500617FD9 /* UIView.swift in Sources */,
 				B11E0DCB26DD452F000D01C9 /* PicturesBottomLoaderView.swift in Sources */,
 				B176D2FD26D8C3EE007CD717 /* MenuDependency.swift in Sources */,
+				B1F8E1F026DE2EB0004F96E1 /* PictureDetailRouter.swift in Sources */,
 				B130015826DD152E00D849CA /* HTTPRequest.swift in Sources */,
 				B130015A26DD16FD00D849CA /* Consts.swift in Sources */,
+				B1F8E1F226DE2EBD004F96E1 /* PictureDetailViewController.swift in Sources */,
+				B1F8E1F426DE2EE0004F96E1 /* PictureDetailInteractor.swift in Sources */,
 				B1C4F1C926D4113900617FD9 /* MenuBtnView.swift in Sources */,
+				B1D2A19B26DE966000DA40A8 /* PictureDetailAPI.swift in Sources */,
 				B176D2FA26D8C375007CD717 /* AppDI.swift in Sources */,
 				B176D31726D8EFAA007CD717 /* CollectionViewCellType.swift in Sources */,
 				B1C4F1BC26D3E54300617FD9 /* MenuViewController.swift in Sources */,
@@ -404,12 +476,14 @@
 				B16C401226DA2C80005DB8EF /* PicSplashNetwork.swift in Sources */,
 				B176D31126D8EBFE007CD717 /* PicturesDependency.swift in Sources */,
 				B1C4F1A126D3DF8D00617FD9 /* AppDelegate.swift in Sources */,
+				B1F8E20726DE5FEF004F96E1 /* PictureDetailAssembly.swift in Sources */,
 				B1C4F1C426D4104000617FD9 /* MenuInteractor.swift in Sources */,
 				B1C4F1C226D4103400617FD9 /* MenuRouter.swift in Sources */,
 				B176D30D26D8EB0E007CD717 /* PicturesRouter.swift in Sources */,
 				B176D31E26D8F937007CD717 /* Picture.swift in Sources */,
 				B16C400C26DA2398005DB8EF /* UIImageView.swift in Sources */,
 				B176D30F26D8EB22007CD717 /* PicturesInteractor.swift in Sources */,
+				B1F8E1F726DE32A9004F96E1 /* PictureDetailDependecy.swift in Sources */,
 				B11E0DC926DD2818000D01C9 /* PicturesAPI.swift in Sources */,
 				B1C4F1C026D4102C00617FD9 /* MenuPresenter.swift in Sources */,
 				B176D30B26D8EB02007CD717 /* PicturesPresenter.swift in Sources */,

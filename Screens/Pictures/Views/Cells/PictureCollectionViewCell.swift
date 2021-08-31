@@ -75,6 +75,9 @@ private extension PictureCollectionViewCell {
         backView.addSubview(imageView)
         backView.addSubview(favoriteBtn)
         backView.addSubview(photograperNameLabel)
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(openPicture))
+        contentView.addGestureRecognizer(tapRecognizer)
     }
 }
 
@@ -104,6 +107,13 @@ private extension PictureCollectionViewCell {
             make.height.equalTo(10).priority(.low)
         })
         
+    }
+}
+
+// MARK: Actions
+private extension PictureCollectionViewCell {
+    @objc func openPicture() {
+        viewModel?.inputs.openPicture()
     }
 }
 

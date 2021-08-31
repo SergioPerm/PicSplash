@@ -21,6 +21,8 @@ extension PictureLoader {
         return chachedImages.object(forKey: url)
     }
     
+    
+    
     func load(url: NSURL, completion: @escaping (UIImage?) -> ()) {
         
         if let image = cachedImage(url: url) {
