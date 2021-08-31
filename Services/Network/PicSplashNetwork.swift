@@ -48,4 +48,29 @@ final class PicSplashNetwork {
         
         return promise
     }
+    
+    func requestData(_ url: URL?) -> Promise<Data> {
+        let promise = Promise<Data>(on: .main) { fullFill, reject in
+            guard let url = url else {
+                reject(PicError(title: "wrong url"))
+                return
+            }
+            
+            let urlSession = URLSession(configuration: .ephemeral)
+            urlSession.dataTask(with: url) { (data, response, error) in
+                guard let responseData = data, error == nil else {
+                    if let error = error {
+                        reject(error)
+                    } else {
+                        reject(PicError(title: "bad data"))
+                    }
+                    return
+                }
+                
+                fullFill(responseData)
+            }.resume()
+        }
+        
+        return promise
+    }
 }

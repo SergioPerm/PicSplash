@@ -37,19 +37,21 @@ protocol PictureViewModelType: AnyObject {
 final class PictureViewModel: PictureViewModelType, PictureViewModelInputs, PictureViewModelOutputs {
     
     private let picture: Picture
+    private weak var handlers: PicturesHandlers?
     
     var inputs: PictureViewModelInputs { return self }
     var outputs: PictureViewModelOutputs { return self }
     
-    init(picture: Picture) {
+    init(picture: Picture, handlers: PicturesHandlers) {
         self.picture = picture
+        self.handlers = handlers
     }
     
     // MARK: Inputs
     
     /// Открыть картинку
     func openPicture() {
-        
+        handlers?.selectPicture(picture: picture)
     }
     /// Установить/снять статус избранного
     func setFavoriteStatus() {

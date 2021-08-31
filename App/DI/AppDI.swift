@@ -9,15 +9,20 @@ import Foundation
 import DITranquillity
 
 class AppDI {
-    private static let container: DIContainer = DIContainer()
+    static let container: DIContainer = DIContainer()
     
     static func reg() {
-        DISetting.Log.level = .warning
+        DISetting.Log.level = .info
         AppDependency.load(container: container)
         MenuDependency.load(container: container)
         PicturesDependency.load(container: container)
+        PictureDetailDependency.load(container: container)
         
         container.initializeSingletonObjects()
+    }
+    
+    static func resolve<T>(with arguments: AnyArguments) -> T {
+        return container.resolve(arguments: arguments)
     }
     
     static func resolve<T>() -> T {

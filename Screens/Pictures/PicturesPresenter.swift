@@ -7,6 +7,9 @@
 
 import Foundation
 
+protocol PicturesHandlers: AnyObject {
+    func selectPicture(picture: Picture)
+}
 
 /// Протокол работы с MenuPresenter
 protocol PicturesPresentationLogic: AnyObject {
@@ -51,7 +54,7 @@ extension PicturesPresenter: PicturesPresentationLogic{
         var viewModels: [PictureViewModelType] = []
         
         picturesObjects.forEach({
-            viewModels.append(PictureViewModel(picture: $0))
+            viewModels.append(PictureViewModel(picture: $0, handlers: self))
         })
         
         viewController?.reloadPictures(pictures: viewModels)
@@ -63,7 +66,7 @@ extension PicturesPresenter: PicturesPresentationLogic{
         var viewModels: [PictureViewModelType] = []
         
         picturesObjects.forEach({
-            viewModels.append(PictureViewModel(picture: $0))
+            viewModels.append(PictureViewModel(picture: $0, handlers: self))
         })
         
         viewController?.addPictures(pictures: viewModels)
@@ -98,5 +101,11 @@ extension PicturesPresenter: PicturesViewControllerOutput {
         
         currentQueryString = queryString
         interactor?.loadPicturesByQuery(queryString: queryString)
+    }
+}
+
+extension PicturesPresenter: PicturesHandlers {
+    func selectPicture(picture: Picture) {
+        router?.routeTo(target: .detailPicture(picture: picture))
     }
 }
