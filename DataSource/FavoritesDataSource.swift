@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol FavoritesDataSource {
+protocol FavoritesDataSource: AnyObject {
     func getFavorite(pictureID: Int) -> Bool
     func setFavorite(pictureID: Int)
     func deleteFavorite(pictureID: Int)

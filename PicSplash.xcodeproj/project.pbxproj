@@ -721,7 +721,7 @@
 			repositoryURL = "https://github.com/ivlevAstef/DITranquillity";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.3.3;
+				minimumVersion = 4.3.0;
 			};
 		};
 		B1C4F1B726D3E51100617FD9 /* XCRemoteSwiftPackageReference "SnapKit" */ = {

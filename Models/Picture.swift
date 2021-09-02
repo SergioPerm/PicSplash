@@ -12,6 +12,9 @@ struct Picture: Codable {
     var photographer: String
     var avgColor: String
     var src: Source
+    
+    // nocodable properties
+    var isFavorite: Bool?
 }
 
 struct Source: Codable {

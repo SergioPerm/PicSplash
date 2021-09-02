@@ -19,14 +19,42 @@ protocol PicturesBusinessLogic {
     /// Загрузить картинку по запросу постранично
     /// - Parameter queryString: строка запроса
     func loadPicturesByQueryWithPaging(queryString: String)
+    func changeFavoriteStatus(for id: Int, newStatus: Bool)
 }
 
 final class PicturesInteractor {
     weak var presenter: PicturesPresentationLogic?
     
+    private let favoriteDataSource: FavoritesDataSource
+    private var favoritesPics: [Int] = []
+    
     // MARK: Paging
     private var currentPagesCount: Int = 0
     private let maxItemsInPage: Int = 14
+    
+    init(dataSource: FavoritesDataSource) {
+        self.favoriteDataSource = dataSource
+        setup()
+    }
+}
+
+// MARK: Private methods
+private extension PicturesInteractor {
+    func setup() {
+        favoritesPics = favoriteDataSource.getAllFavorites()
+    }
+    
+    func loadFavoriteData(for pictures: [Picture]) -> [Picture] {
+        return pictures.map {
+            var photo = $0
+            if let _ = self.favoritesPics.first(where: { id in id == photo.id }) {
+                photo.isFavorite = true
+            } else {
+                photo.isFavorite = false
+            }
+            return photo
+        }
+    }
 }
 
 // MARK: MenuBusinessLogic
@@ -36,9 +64,10 @@ extension PicturesInteractor: PicturesBusinessLogic {
         currentPagesCount = 0
         
         PicturesAPI.getPictures(page: 1, perPage: maxItemsInPage).then { [weak self] response in
-            self?.currentPagesCount += 1
-            
-            self?.presenter?.loadPictures(picturesObjects: response.photos)
+            guard let `self` = self else { return }
+            self.currentPagesCount += 1
+                                
+            self.presenter?.loadPictures(picturesObjects: self.loadFavoriteData(for: response.photos))
         }.catch { error in
             print("error")
         }
@@ -49,9 +78,10 @@ extension PicturesInteractor: PicturesBusinessLogic {
         let newPage = currentPagesCount + 1
         
         PicturesAPI.getPictures(page: newPage, perPage: maxItemsInPage).then { [weak self] response in
-            self?.currentPagesCount += 1
+            guard let `self` = self else { return }
+            self.currentPagesCount += 1
             
-            self?.presenter?.loadPicturesFromPage(picturesObjects: response.photos)
+            self.presenter?.loadPicturesFromPage(picturesObjects: self.loadFavoriteData(for: response.photos))
         }.catch { error in
             print("error")
         }
@@ -63,9 +93,10 @@ extension PicturesInteractor: PicturesBusinessLogic {
         currentPagesCount = 0
         
         PicturesAPI.getPicturesByQuery(queryString: queryString, page: 1, perPage: maxItemsInPage).then { [weak self] response in
-            self?.currentPagesCount += 1
+            guard let `self` = self else { return }
+            self.currentPagesCount += 1
             
-            self?.presenter?.loadPictures(picturesObjects: response.photos)
+            self.presenter?.loadPictures(picturesObjects: self.loadFavoriteData(for: response.photos))
         }.catch { error in
             print("error")
         }
@@ -77,11 +108,20 @@ extension PicturesInteractor: PicturesBusinessLogic {
         let newPage = currentPagesCount + 1
         
         PicturesAPI.getPicturesByQuery(queryString: queryString, page: newPage, perPage: maxItemsInPage).then { [weak self] response in
-            self?.currentPagesCount += 1
+            guard let `self` = self else { return }
+            self.currentPagesCount += 1
             
-            self?.presenter?.loadPicturesFromPage(picturesObjects: response.photos)
+            self.presenter?.loadPicturesFromPage(picturesObjects: self.loadFavoriteData(for: response.photos))
         }.catch { error in
             print("error")
+        }
+    }
+    
+    func changeFavoriteStatus(for id: Int, newStatus: Bool) {
+        if newStatus {
+            favoriteDataSource.setFavorite(pictureID: id)
+        } else {
+            favoriteDataSource.deleteFavorite(pictureID: id)
         }
     }
 }
