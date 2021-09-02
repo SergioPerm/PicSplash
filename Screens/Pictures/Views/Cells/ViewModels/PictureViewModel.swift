@@ -11,9 +11,7 @@ protocol PictureViewModelInputs {
     /// Открыть картинку
     func openPicture()
     /// Установить/снять статус избранного
-    func setFavoriteStatus()
-    /// Отменить установку статуса избранного
-    func cancelSetFavorite()
+    func changeFavoriteStatus()
 }
 
 protocol PictureViewModelOutputs {
@@ -36,7 +34,7 @@ protocol PictureViewModelType: AnyObject {
 
 final class PictureViewModel: PictureViewModelType, PictureViewModelInputs, PictureViewModelOutputs {
     
-    private let picture: Picture
+    private var picture: Picture
     private weak var handlers: PicturesHandlers?
     
     var inputs: PictureViewModelInputs { return self }
@@ -54,19 +52,16 @@ final class PictureViewModel: PictureViewModelType, PictureViewModelInputs, Pict
         handlers?.selectPicture(picture: picture)
     }
     /// Установить/снять статус избранного
-    func setFavoriteStatus() {
-        
-    }
-    /// Отменить установку статуса избранного
-    func cancelSetFavorite() {
-        
+    func changeFavoriteStatus() {
+        picture.isFavorite = !(picture.isFavorite ?? false)
+        handlers?.setFavorite(picture: picture)
     }
     
     // MARK: Outputs
     
     /// Картинка в избранных
     var isFavorite: Bool {
-        return false
+        return picture.isFavorite ?? false
     }
     /// ID картинки
     var id: Int {

@@ -61,7 +61,9 @@ private extension MenuViewController {
         view.addSubview(favoritesView)
         
         let picturesTap = UITapGestureRecognizer(target: self, action: #selector(openPictures))
+        let favoritesTap = UITapGestureRecognizer(target: self, action: #selector(openFavorites))
         picturesView.addGestureRecognizer(picturesTap)
+        favoritesView.addGestureRecognizer(favoritesTap)
     }
 }
 
@@ -96,5 +98,7 @@ private extension MenuViewController {
 }
 
 extension MenuViewController: MenuDisplayLogic {
-    
+    @objc func openFavorites() {
+        presenter?.openFavorites()
+    }
 }

@@ -12,6 +12,15 @@ struct Picture: Codable {
     var photographer: String
     var avgColor: String
     var src: Source
+    
+    // nocodable properties
+    var isFavorite: Bool?
+}
+
+extension Picture: Equatable {
+    static func == (lhs: Picture, rhs: Picture) -> Bool {
+        lhs.id == rhs.id
+    }
 }
 
 struct Source: Codable {

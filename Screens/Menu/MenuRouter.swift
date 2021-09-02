@@ -42,7 +42,8 @@ extension MenuRouter: MenuRoutingLogic {
             let picturesRouter: PicturesRouter = AppDI.resolve()
             picturesRouter.start()
         case .favorites:
-            print(#function)
+            let favoritesRouter: FavoritesRouter = AppDI.resolve()
+            favoritesRouter.start()
         }
     }
 }

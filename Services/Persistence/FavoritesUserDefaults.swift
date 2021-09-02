@@ -7,44 +7,64 @@
 
 import Foundation
 
-class UserRepository {
-    enum Key: String, CaseIterable {
-        case favorite
-        func make(for pictureID: String) -> String {
-            return self.rawValue + "_" + pictureID
-        }
-    }
-    let userDefaults: UserDefaults
-    // MARK: - Lifecycle
+final class FavoritesUserDefaults {
+    let keyUD: String = "favorites_"
+    let encoder: JSONEncoder = JSONEncoder()
+    let decoder: JSONDecoder = JSONDecoder()
+    
+    private let userDefaults: UserDefaults
+
     init(userDefaults: UserDefaults = .standard) {
         self.userDefaults = userDefaults
     }
-//    // MARK: - API
-//    func storeInfo(forUserID userID: String, name: String, avatarData: Data) {
-//        saveValue(forKey: .name, value: name, userID: userID)
-//        saveValue(forKey: .avatarData, value: avatarData, userID: userID)
-//    }
-//
-//    func getUserInfo(forUserID userID: String) -> (name: String?, avatarData: Data?) {
-//        let name: String? = readValue(forKey: .name, userID: userID)
-//        let avatarData: Data? = readValue(forKey: .avatarData, userID: userID)
-//        return (name, avatarData)
-//    }
+}
+
+private extension FavoritesUserDefaults {
+    func removeFavorite(pictureID: String) {
+        userDefaults.removeObject(forKey: keyUD + pictureID)
+    }
     
-    func removeUserInfo(forUserID userID: String) {
-        Key
-            .allCases
-            .map { $0.make(for: userID) }
-            .forEach { key in
-                userDefaults.removeObject(forKey: key)
+    func saveValue(forKey pictureID: String, value: Data) {
+        userDefaults.set(value, forKey: keyUD + pictureID)
+    }
+    
+    func readValue<T>(forKey pictureID: String) -> T? {
+        return userDefaults.value(forKey: keyUD + pictureID) as? T
+    }
+    
+    func getAllItems() -> [String: Any] {
+        return userDefaults.dictionaryRepresentation().filter { item in
+            item.key.contains(keyUD)
+        }
+    }
+}
+
+extension FavoritesUserDefaults: FavoritesDataSource {
+    func getFavorite(pictureID: Int) -> Bool {
+        if let isFavorite: Bool = readValue(forKey: String(pictureID)) {
+            return isFavorite
+        }
+        
+        return false
+    }
+    
+    func setFavorite(picture: Picture) {
+        let id = String(picture.id)
+        if let encoded = try? encoder.encode(picture) {
+            saveValue(forKey: id, value: encoded)
         }
     }
     
-    // MARK: - Private
-    private func saveValue(forKey key: Key, value: Any, userID: String) {
-        userDefaults.set(value, forKey: key.make(for: userID))
+    func deleteFavorite(pictureID: Int) {
+        removeFavorite(pictureID: String(pictureID))
     }
-    private func readValue<T>(forKey key: Key, userID: String) -> T? {
-        return userDefaults.value(forKey: key.make(for: userID)) as? T
+    
+    func getAllFavorites() -> [Picture] {
+        return getAllItems().compactMap {
+            if let data = $0.1 as? Data, let loadedPicture = try? decoder.decode(Picture.self, from: data) {
+                return loadedPicture
+            }
+            return nil
+        }
     }
 }

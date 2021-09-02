@@ -16,6 +16,7 @@ class AppDI {
         AppDependency.load(container: container)
         MenuDependency.load(container: container)
         PicturesDependency.load(container: container)
+        FavoritesDependency.load(container: container)
         PictureDetailDependency.load(container: container)
         
         container.initializeSingletonObjects()

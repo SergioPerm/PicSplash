@@ -112,6 +112,7 @@ private extension PictureCollectionViewCell {
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(openPicture))
         contentView.addGestureRecognizer(tapRecognizer)
+        favoriteBtn.addTarget(self, action: #selector(favoriteAction), for: .touchUpInside)
     }
 }
 
@@ -153,6 +154,12 @@ private extension PictureCollectionViewCell {
     @objc func openPicture() {
         viewModel?.inputs.openPicture()
     }
+    
+    @objc func favoriteAction() {
+        guard let viewModel = viewModel else { return }
+        viewModel.inputs.changeFavoriteStatus()
+        favoriteBtn.backgroundColor = viewModel.outputs.isFavorite ? #colorLiteral(red: 1, green: 0.6928812737, blue: 0.1875946596, alpha: 1) : .white
+    }
 }
 
 // MARK: Bind viewModel
@@ -168,6 +175,7 @@ private extension PictureCollectionViewCell {
             self.imageView.image = image
         }
         
+        favoriteBtn.backgroundColor = viewModel.outputs.isFavorite ? #colorLiteral(red: 1, green: 0.6928812737, blue: 0.1875946596, alpha: 1) : .white
         photograperNameLabel.text = viewModel.outputs.photographerName
         backView.backgroundColor = UIColor(hexString: viewModel.outputs.avgColorHex)
     }
