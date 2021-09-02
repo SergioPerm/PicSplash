@@ -22,7 +22,7 @@ final class PictureDetailViewController: UIViewController {
     
     private let pictureImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "placeholder")
         imageView.clipsToBounds = true
@@ -44,6 +44,7 @@ private extension PictureDetailViewController {
     func setup() {
         view.backgroundColor = .white
         view.addSubview(pictureImageView)
+        pictureImageView.enableZoom()
     }
 }
 
