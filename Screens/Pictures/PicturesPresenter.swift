@@ -9,7 +9,7 @@ import Foundation
 
 protocol PicturesHandlers: AnyObject {
     func selectPicture(picture: Picture)
-    func setFavorite(pictureID: Int, newStatus: Bool)
+    func setFavorite(picture: Picture)
 }
 
 /// Протокол работы с MenuPresenter
@@ -110,7 +110,7 @@ extension PicturesPresenter: PicturesHandlers {
         router?.routeTo(target: .detailPicture(picture: picture))
     }
     
-    func setFavorite(pictureID: Int, newStatus: Bool) {
-        interactor?.changeFavoriteStatus(for: pictureID, newStatus: newStatus)
+    func setFavorite(picture: Picture) {
+        interactor?.changeFavoriteStatus(picture: picture)
     }
 }

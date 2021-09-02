@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         regDI()
         createAndShowStartScreen()
-        
+                
         return true
     }
 }

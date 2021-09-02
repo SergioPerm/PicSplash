@@ -53,8 +53,8 @@ final class PictureViewModel: PictureViewModelType, PictureViewModelInputs, Pict
     }
     /// Установить/снять статус избранного
     func changeFavoriteStatus() {
-        picture.isFavorite = !(picture.isFavorite ?? true)
-        handlers?.setFavorite(pictureID: picture.id, newStatus: picture.isFavorite ?? false)
+        picture.isFavorite = !(picture.isFavorite ?? false)
+        handlers?.setFavorite(picture: picture)
     }
     
     // MARK: Outputs

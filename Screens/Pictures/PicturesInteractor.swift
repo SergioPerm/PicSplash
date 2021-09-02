@@ -19,14 +19,14 @@ protocol PicturesBusinessLogic {
     /// Загрузить картинку по запросу постранично
     /// - Parameter queryString: строка запроса
     func loadPicturesByQueryWithPaging(queryString: String)
-    func changeFavoriteStatus(for id: Int, newStatus: Bool)
+    func changeFavoriteStatus(picture: Picture)
 }
 
 final class PicturesInteractor {
     weak var presenter: PicturesPresentationLogic?
     
     private let favoriteDataSource: FavoritesDataSource
-    private var favoritesPics: [Int] = []
+    private var favoritesPics: [Picture] = []
     
     // MARK: Paging
     private var currentPagesCount: Int = 0
@@ -45,15 +45,19 @@ private extension PicturesInteractor {
     }
     
     func loadFavoriteData(for pictures: [Picture]) -> [Picture] {
-        return pictures.map {
-            var photo = $0
-            if let _ = self.favoritesPics.first(where: { id in id == photo.id }) {
-                photo.isFavorite = true
-            } else {
-                photo.isFavorite = false
+        
+        let pics: [Picture] = pictures.map {
+            var pic = $0
+            if let _ = self.favoritesPics.first(where: { favoritePic in
+                pic == favoritePic
+            }) {
+                pic.isFavorite = true
             }
-            return photo
+            
+            return pic
         }
+        
+        return pics
     }
 }
 
@@ -117,11 +121,11 @@ extension PicturesInteractor: PicturesBusinessLogic {
         }
     }
     
-    func changeFavoriteStatus(for id: Int, newStatus: Bool) {
-        if newStatus {
-            favoriteDataSource.setFavorite(pictureID: id)
+    func changeFavoriteStatus(picture: Picture) {
+        if picture.isFavorite ?? false {
+            favoriteDataSource.setFavorite(picture: picture)
         } else {
-            favoriteDataSource.deleteFavorite(pictureID: id)
+            favoriteDataSource.deleteFavorite(pictureID: picture.id)
         }
     }
 }

@@ -9,7 +9,7 @@ import Foundation
 
 protocol FavoritesDataSource: AnyObject {
     func getFavorite(pictureID: Int) -> Bool
-    func setFavorite(pictureID: Int)
+    func setFavorite(picture: Picture)
     func deleteFavorite(pictureID: Int)
-    func getAllFavorites() -> [Int]
+    func getAllFavorites() -> [Picture]
 }

@@ -16,6 +16,7 @@ protocol MenuPresentationLogic: AnyObject {
 protocol MenuViewControllerOutput {
     /// Открыть экран картинок
     func openPictures()
+    func openFavorites()
 }
 
 final class MenuPresenter {
@@ -41,6 +42,10 @@ extension MenuPresenter: MenuViewControllerOutput {
     /// Открыть экран картинок
     func openPictures() {
         router?.routeTo(target: .pictures)
+    }
+    
+    func openFavorites() {
+        router?.routeTo(target: .favorites)
     }
 }
 

@@ -36,6 +36,11 @@
 		B176D32026D91A08007CD717 /* PictureLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176D31F26D91A08007CD717 /* PictureLoader.swift */; };
 		B195E6D026E0BFC500478869 /* FavoritesUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B195E6CF26E0BFC500478869 /* FavoritesUserDefaults.swift */; };
 		B195E6D326E0C13600478869 /* FavoritesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B195E6D226E0C13600478869 /* FavoritesDataSource.swift */; };
+		B195E6D826E1006C00478869 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B195E6D726E1006C00478869 /* FavoritesViewController.swift */; };
+		B195E6DA26E1007F00478869 /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B195E6D926E1007F00478869 /* FavoritesPresenter.swift */; };
+		B195E6DC26E1008900478869 /* FavoritesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B195E6DB26E1008900478869 /* FavoritesRouter.swift */; };
+		B195E6DE26E1009400478869 /* FavoritesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B195E6DD26E1009400478869 /* FavoritesInteractor.swift */; };
+		B195E6E026E1104C00478869 /* FavoritesDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B195E6DF26E1104C00478869 /* FavoritesDependency.swift */; };
 		B1C4F1A126D3DF8D00617FD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C4F1A026D3DF8D00617FD9 /* AppDelegate.swift */; };
 		B1C4F1AA26D3DF8F00617FD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1C4F1A926D3DF8F00617FD9 /* Assets.xcassets */; };
 		B1C4F1AD26D3DF8F00617FD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1C4F1AB26D3DF8F00617FD9 /* LaunchScreen.storyboard */; };
@@ -95,6 +100,11 @@
 		B176D31F26D91A08007CD717 /* PictureLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureLoader.swift; sourceTree = "<group>"; };
 		B195E6CF26E0BFC500478869 /* FavoritesUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesUserDefaults.swift; sourceTree = "<group>"; };
 		B195E6D226E0C13600478869 /* FavoritesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesDataSource.swift; sourceTree = "<group>"; };
+		B195E6D726E1006C00478869 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		B195E6D926E1007F00478869 /* FavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenter.swift; sourceTree = "<group>"; };
+		B195E6DB26E1008900478869 /* FavoritesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRouter.swift; sourceTree = "<group>"; };
+		B195E6DD26E1009400478869 /* FavoritesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesInteractor.swift; sourceTree = "<group>"; };
+		B195E6DF26E1104C00478869 /* FavoritesDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesDependency.swift; sourceTree = "<group>"; };
 		B1C4F19D26D3DF8D00617FD9 /* PicSplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicSplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1C4F1A026D3DF8D00617FD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1C4F1A926D3DF8F00617FD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -236,6 +246,7 @@
 		B176D31B26D8F895007CD717 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				B195E6D426E1004400478869 /* Favorites */,
 				B176D30526D8EACB007CD717 /* Pictures */,
 				B1C4F1BA26D3E52600617FD9 /* Menu */,
 				B1F8E1EB26DE2E78004F96E1 /* PictureDetail */,
@@ -265,6 +276,34 @@
 				B195E6D226E0C13600478869 /* FavoritesDataSource.swift */,
 			);
 			path = DataSource;
+			sourceTree = "<group>";
+		};
+		B195E6D426E1004400478869 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				B195E6D626E1005800478869 /* DI */,
+				B195E6D526E1005200478869 /* Views */,
+				B195E6D926E1007F00478869 /* FavoritesPresenter.swift */,
+				B195E6DB26E1008900478869 /* FavoritesRouter.swift */,
+				B195E6DD26E1009400478869 /* FavoritesInteractor.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		B195E6D526E1005200478869 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B195E6D726E1006C00478869 /* FavoritesViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B195E6D626E1005800478869 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				B195E6DF26E1104C00478869 /* FavoritesDependency.swift */,
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 		B1C4F19426D3DF8D00617FD9 = {
@@ -488,17 +527,21 @@
 				B195E6D326E0C13600478869 /* FavoritesDataSource.swift in Sources */,
 				B176D31726D8EFAA007CD717 /* CollectionViewCellType.swift in Sources */,
 				B1C4F1BC26D3E54300617FD9 /* MenuViewController.swift in Sources */,
+				B195E6DE26E1009400478869 /* FavoritesInteractor.swift in Sources */,
 				B176D32026D91A08007CD717 /* PictureLoader.swift in Sources */,
 				B176D30226D8C697007CD717 /* AppDependency.swift in Sources */,
+				B195E6D826E1006C00478869 /* FavoritesViewController.swift in Sources */,
 				B176D31A26D8EFE3007CD717 /* PictureViewModel.swift in Sources */,
 				B11E0DC526DD227D000D01C9 /* PicturesRequest.swift in Sources */,
 				B176D30026D8C639007CD717 /* GlobalNavigationViewController.swift in Sources */,
 				B16C400E26DA25F2005DB8EF /* UIColor.swift in Sources */,
 				B176D31426D8EF64007CD717 /* PictureCollectionViewCell.swift in Sources */,
+				B195E6DA26E1007F00478869 /* FavoritesPresenter.swift in Sources */,
 				B11E0DC726DD2519000D01C9 /* PicturesResponse.swift in Sources */,
 				B176D30926D8EAEE007CD717 /* PicturesViewController.swift in Sources */,
 				B16C401226DA2C80005DB8EF /* PicSplashNetwork.swift in Sources */,
 				B176D31126D8EBFE007CD717 /* PicturesDependency.swift in Sources */,
+				B195E6E026E1104C00478869 /* FavoritesDependency.swift in Sources */,
 				B1C4F1A126D3DF8D00617FD9 /* AppDelegate.swift in Sources */,
 				B1F8E20726DE5FEF004F96E1 /* PictureDetailAssembly.swift in Sources */,
 				B1C4F1C426D4104000617FD9 /* MenuInteractor.swift in Sources */,
@@ -506,6 +549,7 @@
 				B176D30D26D8EB0E007CD717 /* PicturesRouter.swift in Sources */,
 				B176D31E26D8F937007CD717 /* Picture.swift in Sources */,
 				B16C400C26DA2398005DB8EF /* UIImageView.swift in Sources */,
+				B195E6DC26E1008900478869 /* FavoritesRouter.swift in Sources */,
 				B176D30F26D8EB22007CD717 /* PicturesInteractor.swift in Sources */,
 				B1F8E1F726DE32A9004F96E1 /* PictureDetailDependecy.swift in Sources */,
 				B11E0DC926DD2818000D01C9 /* PicturesAPI.swift in Sources */,

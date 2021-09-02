@@ -17,6 +17,12 @@ struct Picture: Codable {
     var isFavorite: Bool?
 }
 
+extension Picture: Equatable {
+    static func == (lhs: Picture, rhs: Picture) -> Bool {
+        lhs.id == rhs.id
+    }
+}
+
 struct Source: Codable {
     var original: String = ""
     var large2x: String = ""
