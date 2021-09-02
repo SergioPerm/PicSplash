@@ -28,6 +28,22 @@ class PictureCollectionViewCell: UICollectionViewCell, CollectionViewCellType {
         return view
     }()
     
+    private let gradientView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view
+    }()
+    
+    private let gradient: CAGradientLayer = {
+        let gradient = CAGradientLayer()
+        gradient.startPoint = .init(x: 0.5, y: 0.5)
+        gradient.endPoint = .init(x: 0.5, y: 1.0)
+        gradient.colors = [UIColor.clear.cgColor, #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.5039328231).cgColor]
+        
+        return gradient
+    }()
+    
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -41,7 +57,9 @@ class PictureCollectionViewCell: UICollectionViewCell, CollectionViewCellType {
     private let photograperNameLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+        label.numberOfLines = 0
+        label.textColor = .white
         
         return label
     }()
@@ -53,6 +71,7 @@ class PictureCollectionViewCell: UICollectionViewCell, CollectionViewCellType {
         btn.setImage(UIImage(named: "star"), for: .normal)
         btn.imageEdgeInsets = UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)
         btn.layer.cornerRadius = 10
+        btn.backgroundColor = .white
         
         return btn
     }()
@@ -66,11 +85,26 @@ class PictureCollectionViewCell: UICollectionViewCell, CollectionViewCellType {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageView.image = nil
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        gradient.frame = gradientView.bounds
+    }
 }
 
 // MARK: Setup
 private extension PictureCollectionViewCell {
     func setup() {
+        
+        gradientView.layer.addSublayer(gradient)
+        imageView.addSubview(gradientView)
+        imageView.bringSubviewToFront(gradientView)
+        
         contentView.addSubview(backView)
         backView.addSubview(imageView)
         backView.addSubview(favoriteBtn)
@@ -91,20 +125,24 @@ private extension PictureCollectionViewCell {
         
         imageView.snp.makeConstraints({ make in
             make.left.top.equalToSuperview().offset(5)
-            make.right.equalToSuperview().offset(-5)
+            make.right.bottom.equalToSuperview().offset(-5)
+        })
+        
+        gradientView.snp.makeConstraints({ make in
+            make.left.top.right.bottom.equalToSuperview()
         })
         
         favoriteBtn.snp.makeConstraints({ make in
             make.width.height.equalTo(30)
-            make.top.equalToSuperview().offset(6)
-            make.right.equalToSuperview().offset(-6)
+            make.top.equalToSuperview().offset(8)
+            make.right.equalToSuperview().offset(-8)
         })
         
         photograperNameLabel.snp.makeConstraints({ make in
-            make.top.equalTo(imageView.snp.bottom).offset(6)
-            make.left.equalToSuperview().offset(5)
-            make.right.bottom.equalToSuperview().offset(-5)
-            make.height.equalTo(10).priority(.low)
+            make.left.equalToSuperview().offset(10)
+            make.right.equalToSuperview().offset(-10)
+            make.bottom.equalToSuperview().offset(-10)
+            make.height.equalTo(14).priority(.low)
         })
         
     }

@@ -17,6 +17,15 @@ struct PicError: LocalizedError {
 }
 
 final class PicSplashNetwork {
+    
+    private let urlSession: URLSession = {
+        let configuration = URLSessionConfiguration.default
+        configuration.httpMaximumConnectionsPerHost = 10
+        let session = URLSession(configuration: configuration)
+        
+        return session
+    }()
+    
     func request<Response: Codable>(_ request: HTTPRequest) -> Promise<Response> {
         let promise = Promise<Response>(on: .main) { fullFill, reject in
             guard let urlRequest = request.urlRequest() else {
@@ -24,8 +33,7 @@ final class PicSplashNetwork {
                 return
             }
             
-            let urlSession = URLSession(configuration: .default)
-            urlSession.dataTask(with: urlRequest) { (data, response, error) in
+            self.urlSession.dataTask(with: urlRequest) { (data, response, error) in
                 guard let responseData = data, error == nil else {
                     if let error = error {
                         reject(error)
@@ -56,8 +64,7 @@ final class PicSplashNetwork {
                 return
             }
             
-            let urlSession = URLSession(configuration: .ephemeral)
-            urlSession.dataTask(with: url) { (data, response, error) in
+            self.urlSession.dataTask(with: url) { (data, response, error) in
                 guard let responseData = data, error == nil else {
                     if let error = error {
                         reject(error)

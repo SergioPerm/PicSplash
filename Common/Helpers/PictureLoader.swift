@@ -8,53 +8,28 @@
 import UIKit
 
 final class PictureLoader {
-    
     static let publicLoader = PictureLoader()
-    
-    private let chachedImages = NSCache<NSURL, UIImage>()
-    private var requestsInProgress = [NSURL: [(UIImage?) -> ()]]()
-        
 }
 
 extension PictureLoader {
-    private func cachedImage(url: NSURL) -> UIImage? {
-        return chachedImages.object(forKey: url)
-    }
-    
-    
-    
     func load(url: NSURL, completion: @escaping (UIImage?) -> ()) {
+                        
+        let configuration = URLSessionConfiguration.default
+        configuration.urlCache = URLCache(memoryCapacity: 50 * 1024 * 1024, diskCapacity: 50 * 1024 * 1024, diskPath: "images")
+        configuration.httpMaximumConnectionsPerHost = 5
         
-        if let image = cachedImage(url: url) {
-            DispatchQueue.main.async {
-                completion(image)
-            }
-            return
-        }
-        
-        if let _ = requestsInProgress[url] {
-            requestsInProgress[url]?.append(completion)
-        } else {
-            requestsInProgress[url] = [completion]
-        }
-        
-        let urlSession = URLSession(configuration: .ephemeral)
+        let urlSession = URLSession(configuration: configuration)
         urlSession.dataTask(with: url as URL) { (data, response, error) in
-            guard let responseData = data, let image = UIImage(data: responseData), let callbacks = self.requestsInProgress[url], error == nil else {
+            guard let responseData = data, let image = UIImage(data: responseData), error == nil else {
                 DispatchQueue.main.async {
                     completion(nil)
                 }
                 return
             }
             
-            self.chachedImages.setObject(image, forKey: url, cost: responseData.count)
-            
-            for callback in callbacks {
-                DispatchQueue.main.async {
-                    callback(image)
-                }
+            DispatchQueue.main.async {
+                completion(image)
             }
-            
         }.resume()
     }
 }
