@@ -62,7 +62,6 @@ extension PicturesRequest: HTTPRequest {
             params["per_page"] = perPage
             
             return params
-            
         }
     }
 }

@@ -44,8 +44,7 @@ private extension PicturesInteractor {
         favoritesPics = favoriteDataSource.getAllFavorites()
     }
     
-    func loadFavoriteData(for pictures: [Picture]) -> [Picture] {
-        
+    func appendFavoriteData(for pictures: [Picture]) -> [Picture] {
         let pics: [Picture] = pictures.map {
             var pic = $0
             if let _ = self.favoritesPics.first(where: { favoritePic in
@@ -71,7 +70,7 @@ extension PicturesInteractor: PicturesBusinessLogic {
             guard let `self` = self else { return }
             self.currentPagesCount += 1
                                 
-            self.presenter?.loadPictures(picturesObjects: self.loadFavoriteData(for: response.photos))
+            self.presenter?.loadPictures(picturesObjects: self.appendFavoriteData(for: response.photos))
         }.catch { error in
             print("error")
         }
@@ -85,7 +84,7 @@ extension PicturesInteractor: PicturesBusinessLogic {
             guard let `self` = self else { return }
             self.currentPagesCount += 1
             
-            self.presenter?.loadPicturesFromPage(picturesObjects: self.loadFavoriteData(for: response.photos))
+            self.presenter?.loadPicturesFromPage(picturesObjects: self.appendFavoriteData(for: response.photos))
         }.catch { error in
             print("error")
         }
@@ -100,7 +99,7 @@ extension PicturesInteractor: PicturesBusinessLogic {
             guard let `self` = self else { return }
             self.currentPagesCount += 1
             
-            self.presenter?.loadPictures(picturesObjects: self.loadFavoriteData(for: response.photos))
+            self.presenter?.loadPictures(picturesObjects: self.appendFavoriteData(for: response.photos))
         }.catch { error in
             print("error")
         }
@@ -115,7 +114,7 @@ extension PicturesInteractor: PicturesBusinessLogic {
             guard let `self` = self else { return }
             self.currentPagesCount += 1
             
-            self.presenter?.loadPicturesFromPage(picturesObjects: self.loadFavoriteData(for: response.photos))
+            self.presenter?.loadPicturesFromPage(picturesObjects: self.appendFavoriteData(for: response.photos))
         }.catch { error in
             print("error")
         }
