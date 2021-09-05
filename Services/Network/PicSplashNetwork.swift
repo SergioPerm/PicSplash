@@ -19,9 +19,7 @@ struct PicError: LocalizedError {
 final class PicSplashNetwork {
     
     private let urlSession: URLSession = {
-        let configuration = URLSessionConfiguration.default
-        configuration.httpMaximumConnectionsPerHost = 10
-        let session = URLSession(configuration: configuration)
+        let session = URLSession(configuration: .default)
         
         return session
     }()

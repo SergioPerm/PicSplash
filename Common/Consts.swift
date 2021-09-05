@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Consts {
-    struct Links {
+enum Consts {
+    enum Links {
         static let pexelBaseUrl = "api.pexels.com"
     }
 }

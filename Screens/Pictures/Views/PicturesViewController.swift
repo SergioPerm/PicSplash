@@ -93,13 +93,13 @@ private extension PicturesViewController {
         layout.minimumInteritemSpacing = collectionMinimumItemSpacing
         layout.footerReferenceSize = CGSize(width: collectionView.bounds.width, height: 30)
         
-        //searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.delegate = self
         searchController.searchBar.showsCancelButton = true
         
         navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
     }
 }
 
