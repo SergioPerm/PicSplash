@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B1179FA326E61AEC00E0204E /* PicturesInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1179FA226E61AEC00E0204E /* PicturesInteractorTest.swift */; };
+		B1179FA526E61B3B00E0204E /* PicturesPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1179FA426E61B3B00E0204E /* PicturesPresenterMock.swift */; };
+		B1179FA726E61F3100E0204E /* PicturesNetworkingMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1179FA626E61F3100E0204E /* PicturesNetworkingMock.swift */; };
+		B1179FA926E6490F00E0204E /* PicturesDataSourceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1179FA826E6490F00E0204E /* PicturesDataSourceMock.swift */; };
+		B1179FAB26E659A400E0204E /* PicturesRouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1179FAA26E659A400E0204E /* PicturesRouterTest.swift */; };
 		B11E0DBC26DD1EB1000D01C9 /* PromisesTestHelpers in Frameworks */ = {isa = PBXBuildFile; productRef = B11E0DBB26DD1EB1000D01C9 /* PromisesTestHelpers */; };
 		B11E0DBE26DD1EB1000D01C9 /* Promises in Frameworks */ = {isa = PBXBuildFile; productRef = B11E0DBD26DD1EB1000D01C9 /* Promises */; };
 		B11E0DC026DD1EB1000D01C9 /* FBLPromises in Frameworks */ = {isa = PBXBuildFile; productRef = B11E0DBF26DD1EB1000D01C9 /* FBLPromises */; };
@@ -52,6 +57,10 @@
 		B1C4F1C926D4113900617FD9 /* MenuBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C4F1C826D4113900617FD9 /* MenuBtnView.swift */; };
 		B1C4F1CF26D4148500617FD9 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C4F1CE26D4148500617FD9 /* UIView.swift */; };
 		B1D2A19B26DE966000DA40A8 /* PictureDetailAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D2A19A26DE966000DA40A8 /* PictureDetailAPI.swift */; };
+		B1D45BAD26E4D44D00B1C0DE /* PicturesInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D45BAC26E4D44D00B1C0DE /* PicturesInteractorMock.swift */; };
+		B1D45BAF26E4D53000B1C0DE /* PicturesViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D45BAE26E4D53000B1C0DE /* PicturesViewControllerMock.swift */; };
+		B1D45BB126E4D7E500B1C0DE /* PicturesPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D45BB026E4D7E500B1C0DE /* PicturesPresenterTest.swift */; };
+		B1D45BB326E5106500B1C0DE /* PicturesRouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D45BB226E5106500B1C0DE /* PicturesRouterMock.swift */; };
 		B1F8E1EE26DE2EA1004F96E1 /* PictureDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F8E1ED26DE2EA1004F96E1 /* PictureDetailPresenter.swift */; };
 		B1F8E1F026DE2EB0004F96E1 /* PictureDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F8E1EF26DE2EB0004F96E1 /* PictureDetailRouter.swift */; };
 		B1F8E1F226DE2EBD004F96E1 /* PictureDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F8E1F126DE2EBD004F96E1 /* PictureDetailViewController.swift */; };
@@ -59,6 +68,16 @@
 		B1F8E1F726DE32A9004F96E1 /* PictureDetailDependecy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F8E1F626DE32A9004F96E1 /* PictureDetailDependecy.swift */; };
 		B1F8E20726DE5FEF004F96E1 /* PictureDetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F8E20626DE5FEF004F96E1 /* PictureDetailAssembly.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B1D45BA326E4D3B800B1C0DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B1C4F19526D3DF8D00617FD9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B1C4F19C26D3DF8D00617FD9;
+			remoteInfo = PicSplash;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		B1F8E1FE26DE5D78004F96E1 /* Embed Frameworks */ = {
@@ -74,6 +93,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B1179FA226E61AEC00E0204E /* PicturesInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesInteractorTest.swift; sourceTree = "<group>"; };
+		B1179FA426E61B3B00E0204E /* PicturesPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesPresenterMock.swift; sourceTree = "<group>"; };
+		B1179FA626E61F3100E0204E /* PicturesNetworkingMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesNetworkingMock.swift; sourceTree = "<group>"; };
+		B1179FA826E6490F00E0204E /* PicturesDataSourceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesDataSourceMock.swift; sourceTree = "<group>"; };
+		B1179FAA26E659A400E0204E /* PicturesRouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesRouterTest.swift; sourceTree = "<group>"; };
 		B11E0DC426DD227D000D01C9 /* PicturesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesRequest.swift; sourceTree = "<group>"; };
 		B11E0DC626DD2519000D01C9 /* PicturesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesResponse.swift; sourceTree = "<group>"; };
 		B11E0DC826DD2818000D01C9 /* PicturesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesAPI.swift; sourceTree = "<group>"; };
@@ -115,6 +139,12 @@
 		B1C4F1C826D4113900617FD9 /* MenuBtnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBtnView.swift; sourceTree = "<group>"; };
 		B1C4F1CE26D4148500617FD9 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		B1D2A19A26DE966000DA40A8 /* PictureDetailAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDetailAPI.swift; sourceTree = "<group>"; };
+		B1D45B9E26E4D3B800B1C0DE /* PicSplashTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PicSplashTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1D45BA226E4D3B800B1C0DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1D45BAC26E4D44D00B1C0DE /* PicturesInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesInteractorMock.swift; sourceTree = "<group>"; };
+		B1D45BAE26E4D53000B1C0DE /* PicturesViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesViewControllerMock.swift; sourceTree = "<group>"; };
+		B1D45BB026E4D7E500B1C0DE /* PicturesPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesPresenterTest.swift; sourceTree = "<group>"; };
+		B1D45BB226E5106500B1C0DE /* PicturesRouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesRouterMock.swift; sourceTree = "<group>"; };
 		B1F8E1ED26DE2EA1004F96E1 /* PictureDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDetailPresenter.swift; sourceTree = "<group>"; };
 		B1F8E1EF26DE2EB0004F96E1 /* PictureDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDetailRouter.swift; sourceTree = "<group>"; };
 		B1F8E1F126DE2EBD004F96E1 /* PictureDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDetailViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +164,13 @@
 				B11E0DC026DD1EB1000D01C9 /* FBLPromises in Frameworks */,
 				B11E0DBE26DD1EB1000D01C9 /* Promises in Frameworks */,
 				B1C4F1B926D3E51100617FD9 /* SnapKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1D45B9B26E4D3B800B1C0DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +352,7 @@
 				B16C400F26DA2C5F005DB8EF /* Services */,
 				B1C4F1A926D3DF8F00617FD9 /* Assets.xcassets */,
 				B1C4F1AE26D3DF8F00617FD9 /* Info.plist */,
+				B1D45B9F26E4D3B800B1C0DE /* PicSplashTests */,
 				B1C4F19E26D3DF8D00617FD9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -323,6 +361,7 @@
 			isa = PBXGroup;
 			children = (
 				B1C4F19D26D3DF8D00617FD9 /* PicSplash.app */,
+				B1D45B9E26E4D3B800B1C0DE /* PicSplashTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -395,6 +434,47 @@
 			path = PictureDetailAPI;
 			sourceTree = "<group>";
 		};
+		B1D45B9F26E4D3B800B1C0DE /* PicSplashTests */ = {
+			isa = PBXGroup;
+			children = (
+				B1D45BA826E4D42500B1C0DE /* Modules */,
+				B1D45BA226E4D3B800B1C0DE /* Info.plist */,
+			);
+			path = PicSplashTests;
+			sourceTree = "<group>";
+		};
+		B1D45BA826E4D42500B1C0DE /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				B1D45BA926E4D42D00B1C0DE /* Pictures */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		B1D45BA926E4D42D00B1C0DE /* Pictures */ = {
+			isa = PBXGroup;
+			children = (
+				B1D45BAA26E4D43500B1C0DE /* Stubs */,
+				B1D45BB026E4D7E500B1C0DE /* PicturesPresenterTest.swift */,
+				B1179FA226E61AEC00E0204E /* PicturesInteractorTest.swift */,
+				B1179FAA26E659A400E0204E /* PicturesRouterTest.swift */,
+			);
+			path = Pictures;
+			sourceTree = "<group>";
+		};
+		B1D45BAA26E4D43500B1C0DE /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				B1D45BAC26E4D44D00B1C0DE /* PicturesInteractorMock.swift */,
+				B1D45BAE26E4D53000B1C0DE /* PicturesViewControllerMock.swift */,
+				B1D45BB226E5106500B1C0DE /* PicturesRouterMock.swift */,
+				B1179FA426E61B3B00E0204E /* PicturesPresenterMock.swift */,
+				B1179FA626E61F3100E0204E /* PicturesNetworkingMock.swift */,
+				B1179FA826E6490F00E0204E /* PicturesDataSourceMock.swift */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
 		B1F8E1EB26DE2E78004F96E1 /* PictureDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -454,6 +534,24 @@
 			productReference = B1C4F19D26D3DF8D00617FD9 /* PicSplash.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B1D45B9D26E4D3B800B1C0DE /* PicSplashTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1D45BA526E4D3B800B1C0DE /* Build configuration list for PBXNativeTarget "PicSplashTests" */;
+			buildPhases = (
+				B1D45B9A26E4D3B800B1C0DE /* Sources */,
+				B1D45B9B26E4D3B800B1C0DE /* Frameworks */,
+				B1D45B9C26E4D3B800B1C0DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B1D45BA426E4D3B800B1C0DE /* PBXTargetDependency */,
+			);
+			name = PicSplashTests;
+			productName = PicSplashTests;
+			productReference = B1D45B9E26E4D3B800B1C0DE /* PicSplashTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -465,6 +563,11 @@
 				TargetAttributes = {
 					B1C4F19C26D3DF8D00617FD9 = {
 						CreatedOnToolsVersion = 12.5.1;
+					};
+					B1D45B9D26E4D3B800B1C0DE = {
+						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
+						TestTargetID = B1C4F19C26D3DF8D00617FD9;
 					};
 				};
 			};
@@ -487,6 +590,7 @@
 			projectRoot = "";
 			targets = (
 				B1C4F19C26D3DF8D00617FD9 /* PicSplash */,
+				B1D45B9D26E4D3B800B1C0DE /* PicSplashTests */,
 			);
 		};
 /* End PBXProject section */
@@ -497,6 +601,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1C4F1AA26D3DF8F00617FD9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1D45B9C26E4D3B800B1C0DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,7 +665,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B1D45B9A26E4D3B800B1C0DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1D45BAF26E4D53000B1C0DE /* PicturesViewControllerMock.swift in Sources */,
+				B1D45BB326E5106500B1C0DE /* PicturesRouterMock.swift in Sources */,
+				B1D45BB126E4D7E500B1C0DE /* PicturesPresenterTest.swift in Sources */,
+				B1179FA926E6490F00E0204E /* PicturesDataSourceMock.swift in Sources */,
+				B1179FA326E61AEC00E0204E /* PicturesInteractorTest.swift in Sources */,
+				B1179FA726E61F3100E0204E /* PicturesNetworkingMock.swift in Sources */,
+				B1179FAB26E659A400E0204E /* PicturesRouterTest.swift in Sources */,
+				B1D45BAD26E4D44D00B1C0DE /* PicturesInteractorMock.swift in Sources */,
+				B1179FA526E61B3B00E0204E /* PicturesPresenterMock.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B1D45BA426E4D3B800B1C0DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B1C4F19C26D3DF8D00617FD9 /* PicSplash */;
+			targetProxy = B1D45BA326E4D3B800B1C0DE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B1C4F1AF26D3DF8F00617FD9 /* Debug */ = {
@@ -713,6 +848,51 @@
 			};
 			name = Release;
 		};
+		B1D45BA626E4D3B800B1C0DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DUBTL9M98H;
+				INFOPLIST_FILE = PicSplashTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = itotdel.PicSplashTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PicSplash.app/PicSplash";
+			};
+			name = Debug;
+		};
+		B1D45BA726E4D3B800B1C0DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DUBTL9M98H;
+				INFOPLIST_FILE = PicSplashTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = itotdel.PicSplashTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PicSplash.app/PicSplash";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -730,6 +910,15 @@
 			buildConfigurations = (
 				B1C4F1B226D3DF8F00617FD9 /* Debug */,
 				B1C4F1B326D3DF8F00617FD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B1D45BA526E4D3B800B1C0DE /* Build configuration list for PBXNativeTarget "PicSplashTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1D45BA626E4D3B800B1C0DE /* Debug */,
+				B1D45BA726E4D3B800B1C0DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

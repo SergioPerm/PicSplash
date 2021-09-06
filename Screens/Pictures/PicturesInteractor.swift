@@ -26,14 +26,17 @@ final class PicturesInteractor {
     weak var presenter: PicturesPresentationLogic?
     
     private let favoriteDataSource: FavoritesDataSource
+    private let networkAPI: PicturesNetworking
+    
     private var favoritesPics: [Picture] = []
     
     // MARK: Paging
     private var currentPagesCount: Int = 0
     private let maxItemsInPage: Int = 14
     
-    init(dataSource: FavoritesDataSource) {
+    init(dataSource: FavoritesDataSource, networkAPI: PicturesNetworking) {
         self.favoriteDataSource = dataSource
+        self.networkAPI = networkAPI
         setup()
     }
 }
@@ -65,8 +68,8 @@ extension PicturesInteractor: PicturesBusinessLogic {
     /// Загрузить картинки
     func loadPictures() {
         currentPagesCount = 0
-        
-        PicturesAPI.getPictures(page: 1, perPage: maxItemsInPage).then { [weak self] response in
+                        
+        networkAPI.getPictures(page: 1, perPage: maxItemsInPage).then { [weak self] response in
             guard let `self` = self else { return }
             self.currentPagesCount += 1
                                 
@@ -80,7 +83,7 @@ extension PicturesInteractor: PicturesBusinessLogic {
     func loadPicturesWithPaging() {
         let newPage = currentPagesCount + 1
         
-        PicturesAPI.getPictures(page: newPage, perPage: maxItemsInPage).then { [weak self] response in
+        networkAPI.getPictures(page: newPage, perPage: maxItemsInPage).then { [weak self] response in
             guard let `self` = self else { return }
             self.currentPagesCount += 1
             
@@ -95,7 +98,7 @@ extension PicturesInteractor: PicturesBusinessLogic {
     func loadPicturesByQuery(queryString: String) {
         currentPagesCount = 0
         
-        PicturesAPI.getPicturesByQuery(queryString: queryString, page: 1, perPage: maxItemsInPage).then { [weak self] response in
+        networkAPI.getPicturesByQuery(queryString: queryString, page: 1, perPage: maxItemsInPage).then { [weak self] response in
             guard let `self` = self else { return }
             self.currentPagesCount += 1
             
@@ -110,7 +113,7 @@ extension PicturesInteractor: PicturesBusinessLogic {
     func loadPicturesByQueryWithPaging(queryString: String) {
         let newPage = currentPagesCount + 1
         
-        PicturesAPI.getPicturesByQuery(queryString: queryString, page: newPage, perPage: maxItemsInPage).then { [weak self] response in
+        networkAPI.getPicturesByQuery(queryString: queryString, page: newPage, perPage: maxItemsInPage).then { [weak self] response in
             guard let `self` = self else { return }
             self.currentPagesCount += 1
             
@@ -120,6 +123,8 @@ extension PicturesInteractor: PicturesBusinessLogic {
         }
     }
     
+    /// Метод для изменения статуса избранного у картинки, в переданной картинке уже должен быть установлен новый статус избранного
+    /// - Parameter picture: объект Pictire
     func changeFavoriteStatus(picture: Picture) {
         if picture.isFavorite ?? false {
             favoriteDataSource.setFavorite(picture: picture)

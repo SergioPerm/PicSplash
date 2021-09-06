@@ -12,6 +12,7 @@ class AppDependency: DIPart {
     static func load(container: DIContainer) {
         container.register{GlobalNavigationViewController()}.lifetime(.perRun(.strong))
         container.register{PicSplashNetwork()}.lifetime(.perRun(.strong))
+        container.register{PicturesAPI()}.as(PicturesNetworking.self).lifetime(.perRun(.strong))
         container.register{FavoritesUserDefaults()}.as(FavoritesDataSource.self).lifetime(.perRun(.strong))
     }
 }
