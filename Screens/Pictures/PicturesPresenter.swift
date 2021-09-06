@@ -50,7 +50,7 @@ final class PicturesPresenter {
 }
 
 // MARK: MenuPresentationLogic
-extension PicturesPresenter: PicturesPresentationLogic{
+extension PicturesPresenter: PicturesPresentationLogic {
     func loadPictures(picturesObjects: [Picture]) {
         var viewModels: [PictureViewModelType] = []
         
