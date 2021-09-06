@@ -11,6 +11,7 @@
 		B1179FA526E61B3B00E0204E /* PicturesPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1179FA426E61B3B00E0204E /* PicturesPresenterMock.swift */; };
 		B1179FA726E61F3100E0204E /* PicturesNetworkingMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1179FA626E61F3100E0204E /* PicturesNetworkingMock.swift */; };
 		B1179FA926E6490F00E0204E /* PicturesDataSourceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1179FA826E6490F00E0204E /* PicturesDataSourceMock.swift */; };
+		B1179FAB26E659A400E0204E /* PicturesRouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1179FAA26E659A400E0204E /* PicturesRouterTest.swift */; };
 		B11E0DBC26DD1EB1000D01C9 /* PromisesTestHelpers in Frameworks */ = {isa = PBXBuildFile; productRef = B11E0DBB26DD1EB1000D01C9 /* PromisesTestHelpers */; };
 		B11E0DBE26DD1EB1000D01C9 /* Promises in Frameworks */ = {isa = PBXBuildFile; productRef = B11E0DBD26DD1EB1000D01C9 /* Promises */; };
 		B11E0DC026DD1EB1000D01C9 /* FBLPromises in Frameworks */ = {isa = PBXBuildFile; productRef = B11E0DBF26DD1EB1000D01C9 /* FBLPromises */; };
@@ -96,6 +97,7 @@
 		B1179FA426E61B3B00E0204E /* PicturesPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesPresenterMock.swift; sourceTree = "<group>"; };
 		B1179FA626E61F3100E0204E /* PicturesNetworkingMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesNetworkingMock.swift; sourceTree = "<group>"; };
 		B1179FA826E6490F00E0204E /* PicturesDataSourceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesDataSourceMock.swift; sourceTree = "<group>"; };
+		B1179FAA26E659A400E0204E /* PicturesRouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesRouterTest.swift; sourceTree = "<group>"; };
 		B11E0DC426DD227D000D01C9 /* PicturesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesRequest.swift; sourceTree = "<group>"; };
 		B11E0DC626DD2519000D01C9 /* PicturesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesResponse.swift; sourceTree = "<group>"; };
 		B11E0DC826DD2818000D01C9 /* PicturesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesAPI.swift; sourceTree = "<group>"; };
@@ -455,6 +457,7 @@
 				B1D45BAA26E4D43500B1C0DE /* Stubs */,
 				B1D45BB026E4D7E500B1C0DE /* PicturesPresenterTest.swift */,
 				B1179FA226E61AEC00E0204E /* PicturesInteractorTest.swift */,
+				B1179FAA26E659A400E0204E /* PicturesRouterTest.swift */,
 			);
 			path = Pictures;
 			sourceTree = "<group>";
@@ -672,6 +675,7 @@
 				B1179FA926E6490F00E0204E /* PicturesDataSourceMock.swift in Sources */,
 				B1179FA326E61AEC00E0204E /* PicturesInteractorTest.swift in Sources */,
 				B1179FA726E61F3100E0204E /* PicturesNetworkingMock.swift in Sources */,
+				B1179FAB26E659A400E0204E /* PicturesRouterTest.swift in Sources */,
 				B1D45BAD26E4D44D00B1C0DE /* PicturesInteractorMock.swift in Sources */,
 				B1179FA526E61B3B00E0204E /* PicturesPresenterMock.swift in Sources */,
 			);
