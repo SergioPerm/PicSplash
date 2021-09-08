@@ -8,8 +8,10 @@
 import UIKit
 import SnapKit
 
-/// Протокол отображения MenuViewController-а
+/// Протокол для работы с PictureDetailViewController
 protocol PictureDetailDisplayLogic: AnyObject {
+    /// Показать картинку
+    /// - Parameter data: данные картинки
     func showPicture(data: Data)
 }
 
@@ -30,13 +32,13 @@ final class PictureDetailViewController: UIViewController {
         return imageView
     }()
     
+    // MARK: View life-cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         setupConstraints()
         presenter?.loadImage()
     }
-    
 }
 
 // MARK: Setup
@@ -44,7 +46,6 @@ private extension PictureDetailViewController {
     func setup() {
         view.backgroundColor = .white
         view.addSubview(pictureImageView)
-        pictureImageView.enableZoom()
     }
 }
 
@@ -58,7 +59,10 @@ private extension PictureDetailViewController {
     }
 }
 
+// MARK: PictureDetailDisplayLogic
 extension PictureDetailViewController: PictureDetailDisplayLogic {
+    /// Показать картинку
+    /// - Parameter data: данные картинки
     func showPicture(data: Data) {
         pictureImageView.image = UIImage(data: data)
     }

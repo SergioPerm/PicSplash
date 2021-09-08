@@ -8,17 +8,20 @@
 import Foundation
 import SwiftLazy
 
-/// Протокол работы с MenuPresenter
+/// Протокол работы с PictureDetailPresenter
 protocol PictureDetailPresentationLogic: AnyObject {
+    /// Показать картинку
+    /// - Parameter data: данные картинки
     func showImage(data: Data)
 }
 
-/// Протокол для работы c MenuPresenter из MenuViewController
+/// Протокол для работы c PictureDetailPresenter из PictureDetailViewController
 protocol PictureDetailViewControllerOutput {
+    /// Загрузить картинку
     func loadImage()
 }
 
-class PictureDetailPresenter {
+final class PictureDetailPresenter {
     var interactor: PictureDetailBusinessLogic?
     var router: PictureDetailRoutingLogic?
     
@@ -30,13 +33,18 @@ class PictureDetailPresenter {
     }
 }
 
+// MARK: PictureDetailPresentationLogic
 extension PictureDetailPresenter: PictureDetailPresentationLogic {
+    /// Показать картинку
+    /// - Parameter data: данные картинки
     func showImage(data: Data) {
         viewController?.showPicture(data: data)
     }
 }
 
+// MARK: PictureDetailViewControllerOutput
 extension PictureDetailPresenter: PictureDetailViewControllerOutput {
+    /// Загрузить картинку
     func loadImage() {
         interactor?.loadImage()
     }

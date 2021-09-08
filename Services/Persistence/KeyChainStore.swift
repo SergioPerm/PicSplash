@@ -8,10 +8,21 @@
 import Foundation
 import Security
 
+/// Протокол для работы с KeyChainManager
 protocol KeyChainStore {
+    /// Записать API key
+    /// - Parameters:
+    ///   - key: API key
+    ///   - endpoint: адрес API
     func setApiKey(_ key: String, for endpoint: String)
+    /// Получить API key
+    /// - Parameter endpoint: адрес API
     func getApiKey(for endpoint: String) -> String?
+    /// Удалить API key
+    /// - Parameter endpoint: адрес API
     func deleteApiKey(for endpoint: String)
+    /// Проверить авторизован ли
+    /// - Parameter endPoint: адрес API
     func isAuthorized(for endPoint: String) -> Bool
 }
 

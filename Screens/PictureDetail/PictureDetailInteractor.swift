@@ -7,8 +7,9 @@
 
 import Foundation
 
-/// Протокол для работы с PicturesInteractor
+/// Протокол для работы с PictureDetailInteractor
 protocol PictureDetailBusinessLogic: AnyObject {
+    /// Загрузить картинку
     func loadImage()
 }
 
@@ -17,13 +18,21 @@ final class PictureDetailInteractor {
     
     var picture: Picture?
     
+    private let networkAPI: PictureDetailNetworking
+    
+    init(networkAPI: PictureDetailNetworking) {
+        self.networkAPI = networkAPI
+    }
+    
 }
 
+// MARK: PictureDetailBusinessLogic
 extension PictureDetailInteractor: PictureDetailBusinessLogic {
+    /// Загрузить картинку
     func loadImage() {
         guard let picture = picture else { return }
         
-        PictureDetailAPI.loadImageData(url: picture.src.large).then { [weak self] response in
+        networkAPI.loadImageData(url: picture.src.large).then { [weak self] response in
             self?.presenter?.showImage(data: response)
         }.catch { error in
             print(error.localizedDescription)
