@@ -8,8 +8,10 @@
 import UIKit
 import SwiftLazy
 
-/// Протокол для работы с MenuRouter из Presenter
+/// Протокол для работы с PictureDetailRouter из Presenter
 protocol PictureDetailRoutingLogic {
+    /// Перейти на новый экран
+    /// - Parameter target: Target
     func routeTo(target: PictureDetailRouter.Targets)
 }
 
@@ -39,8 +41,10 @@ final class PictureDetailRouter {
     }
 }
 
-// MARK: MenuRoutingLogic
+// MARK: PictureDetailRoutingLogic
 extension PictureDetailRouter: PictureDetailRoutingLogic {
+    /// Перейти на новый экран
+    /// - Parameter target: Target
     func routeTo(target: Targets) {
         
     }

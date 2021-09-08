@@ -19,6 +19,8 @@ protocol PicturesBusinessLogic {
     /// Загрузить картинку по запросу постранично
     /// - Parameter queryString: строка запроса
     func loadPicturesByQueryWithPaging(queryString: String)
+    /// Метод для изменения статуса избранного у картинки, в переданной картинке уже должен быть установлен новый статус избранного
+    /// - Parameter picture: объект Pictire
     func changeFavoriteStatus(picture: Picture)
 }
 

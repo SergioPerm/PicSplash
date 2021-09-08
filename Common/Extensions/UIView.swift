@@ -8,6 +8,7 @@
 import UIKit
 
 extension UIView {
+    /// Получить глобальную Window view
     static var globalView: UIView? {
         return UIApplication.shared.windows.first { $0.isKeyWindow }
     }

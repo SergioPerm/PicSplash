@@ -7,4 +7,5 @@
 
 import UIKit
 
+/// Главный navigationController
 final class GlobalNavigationViewController: UINavigationController { }

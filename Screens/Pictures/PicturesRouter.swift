@@ -9,8 +9,10 @@ import UIKit
 import SwiftLazy
 import DITranquillity
 
-/// Протокол для работы с MenuRouter из Presenter
+/// Протокол для работы с PicturesRouter из Presenter
 protocol PicturesRoutingLogic {
+    /// Перейти на новый экран
+    /// - Parameter target: Target
     func routeTo(target: PicturesRouter.Targets)
 }
 
@@ -34,8 +36,10 @@ final class PicturesRouter {
     }
 }
 
-// MARK: MenuRoutingLogic
+// MARK: PicturesRoutingLogic
 extension PicturesRouter: PicturesRoutingLogic {
+    /// Перейти на новый экран
+    /// - Parameter target: Target
     func routeTo(target: Targets) {
         switch target {
         case .detailPicture(let picture):

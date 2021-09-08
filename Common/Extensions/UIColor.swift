@@ -8,6 +8,10 @@
 import UIKit
 
 extension UIColor {
+    /// Удобный инициализатор с указанием цвета в HEX
+    /// - Parameters:
+    ///   - hexString: цвет в HEX
+    ///   - alpha: значение альфа канала
     convenience init(hexString: String, alpha: CGFloat = 1.0) {
 
         var cString:String = hexString.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()

@@ -39,6 +39,7 @@ private extension FavoritesUserDefaults {
     }
 }
 
+// MARK: FavoritesDataSource
 extension FavoritesUserDefaults: FavoritesDataSource {
     func getFavorite(pictureID: Int) -> Bool {
         if let isFavorite: Bool = readValue(forKey: String(pictureID)) {

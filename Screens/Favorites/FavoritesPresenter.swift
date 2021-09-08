@@ -7,15 +7,17 @@
 
 import Foundation
 
-/// Протокол работы с MenuPresenter
+/// Протокол работы с FavoritesPresenter
 protocol FavoritesPresentationLogic: AnyObject {
     /// Загрузить картинки
     /// - Parameter picturesObjects: Массив объектов картинок
     func loadPictures(picturesObjects: [Picture])
+    /// Удалить картинку
+    /// - Parameter pictureID: id картинки
     func removePicture(pictureID: Int)
 }
 
-/// Протокол для работы c MenuPresenter из MenuViewController
+/// Протокол для работы c FavoritesPresenter из FavoritesViewController
 protocol FavoritesViewControllerOutput {
     /// Перезагрузить картинки
     func loadPictures()
@@ -34,8 +36,10 @@ final class FavoritesPresenter {
     }
 }
 
-// MARK: MenuPresentationLogic
+// MARK: FavoritesPresentationLogic
 extension FavoritesPresenter: FavoritesPresentationLogic{
+    /// Загрузить картинки
+    /// - Parameter picturesObjects: Массив объектов картинок
     func loadPictures(picturesObjects: [Picture]) {
         var viewModels: [PictureViewModelType] = []
         
@@ -45,24 +49,29 @@ extension FavoritesPresenter: FavoritesPresentationLogic{
         
         viewController?.reloadPictures(pictures: viewModels)
     }
-    
+    /// Удалить картинку
+    /// - Parameter pictureID: id картинки
     func removePicture(pictureID: Int) {
         viewController?.removePicture(pictureID: pictureID)
     }
 }
 
-// MARK: MenuViewControllerOutput
+// MARK: FavoritesViewControllerOutput
 extension FavoritesPresenter: FavoritesViewControllerOutput {
+    /// Перезагрузить картинки
     func loadPictures() {
         interactor?.loadPictures()
     }
 }
 
 extension FavoritesPresenter: PicturesHandlers {
+    /// Выбрать картинку
+    /// - Parameter picture: объект картинки
     func selectPicture(picture: Picture) {
         router?.routeTo(target: .detailPicture(picture: picture))
     }
-    
+    /// Сменить статус избранного у картинки
+    /// - Parameter picture: объект картинки
     func setFavorite(picture: Picture) {
         interactor?.changeFavoriteStatus(picture: picture)
     }

@@ -9,8 +9,10 @@ import UIKit
 import SwiftLazy
 import DITranquillity
 
-/// Протокол для работы с MenuRouter из Presenter
+/// Протокол для работы с LoginRouter из Presenter
 protocol LoginRoutingLogic {
+    /// Перейти на новый экран
+    /// - Parameter target: Target
     func routeTo(target: LoginRouter.Targets)
 }
 
@@ -36,6 +38,8 @@ final class LoginRouter {
 
 // MARK: MenuRoutingLogic
 extension LoginRouter: LoginRoutingLogic {
+    /// Перейти на новый экран
+    /// - Parameter target: Target
     func routeTo(target: Targets) {
         switch target {
         case .menu:

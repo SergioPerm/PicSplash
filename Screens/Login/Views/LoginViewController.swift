@@ -8,11 +8,14 @@
 import UIKit
 import SnapKit
 
+/// Протокол для работы с LoginViewController
 protocol LoginDisplayLogic: AnyObject {
+    /// Показать ошибку входа
+    /// - Parameter errorDesc: описание ошибки
     func showLoginError(errorDesc: String)
 }
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
 
     // MARK: Presenter
     var presenter: LoginViewControllerOutput?
@@ -59,6 +62,7 @@ class LoginViewController: UIViewController {
         return btn
     }()
     
+    // MARK: View life-cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
