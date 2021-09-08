@@ -8,11 +8,23 @@
 import Foundation
 
 /// Протокол для работы с MenuInteractor
-protocol MenuBusinessLogic { }
+protocol MenuBusinessLogic {
+    func logout()
+}
 
 final class MenuInteractor {
     weak var presenter: MenuPresentationLogic?
+    private let keyChainStore: KeyChainStore
+    
+    init(keyChainStore: KeyChainStore) {
+        self.keyChainStore = keyChainStore
+    }
 }
 
 // MARK: MenuBusinessLogic
-extension MenuInteractor: MenuBusinessLogic { }
+extension MenuInteractor: MenuBusinessLogic {
+    func logout() {
+        keyChainStore.deleteApiKey(for: Consts.Links.pexelBaseUrl)
+        presenter?.closeMenu()
+    }
+}

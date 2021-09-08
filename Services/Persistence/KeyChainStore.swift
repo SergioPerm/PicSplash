@@ -11,6 +11,7 @@ import Security
 protocol KeyChainStore {
     func setApiKey(_ key: String, for endpoint: String)
     func getApiKey(for endpoint: String) -> String?
+    func deleteApiKey(for endpoint: String)
     func isAuthorized(for endPoint: String) -> Bool
 }
 
@@ -46,6 +47,17 @@ extension KeyChainManager: KeyChainStore {
         return apiKey
     }
         
+    func deleteApiKey(for endpoint: String) {
+        let query = [
+            kSecClass: kSecClassInternetPassword,
+            kSecAttrServer: endpoint,
+            kSecReturnAttributes: true,
+            kSecReturnData: true
+        ] as CFDictionary
+        
+        SecItemDelete(query)
+    }
+    
     func isAuthorized(for endPoint: String) -> Bool {
         return getApiKey(for: endPoint) == nil ? false : true
     }
