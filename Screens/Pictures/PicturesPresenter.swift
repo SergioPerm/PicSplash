@@ -7,8 +7,13 @@
 
 import Foundation
 
+/// Протокол для работы с Presenter из viewModels
 protocol PicturesHandlers: AnyObject {
+    /// Выбрать картинку
+    /// - Parameter picture: объект картинки
     func selectPicture(picture: Picture)
+    /// Сменить статус избранного у картинки
+    /// - Parameter picture: объект картинки
     func setFavorite(picture: Picture)
 }
 

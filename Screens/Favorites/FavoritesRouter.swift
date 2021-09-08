@@ -9,8 +9,10 @@ import UIKit
 import SwiftLazy
 import DITranquillity
 
-/// Протокол для работы с MenuRouter из Presenter
+/// Протокол для работы с FavoritesRouter из Presenter
 protocol FavoritesRoutingLogic {
+    /// Перейти на новый экран
+    /// - Parameter target: Target
     func routeTo(target: FavoritesRouter.Targets)
 }
 
@@ -34,8 +36,10 @@ final class FavoritesRouter {
     }
 }
 
-// MARK: MenuRoutingLogic
+// MARK: FavoritesRoutingLogic
 extension FavoritesRouter: FavoritesRoutingLogic {
+    /// Перейти на новый экран
+    /// - Parameter target: Target
     func routeTo(target: Targets) {
         switch target {
         case .detailPicture(let picture):

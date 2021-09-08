@@ -7,11 +7,13 @@
 
 import UIKit
 
-/// Протокол отображения FavoritesViewController-а
+/// Протокол для работы с FavoritesViewController
 protocol FavoritesDisplayLogic: AnyObject {
     /// Полностью перезагрузить картинки
     /// - Parameter ads: viewModels картинок
     func reloadPictures(pictures: [PictureViewModelType])
+    /// Удалить картинку
+    /// - Parameter pictureID: id картинки
     func removePicture(pictureID: Int)
 }
 
@@ -53,7 +55,6 @@ final class FavoritesViewController: UIViewController {
 // MARK: Setup
 private extension FavoritesViewController {
     func setup() {
-        
         navigationController?.isNavigationBarHidden = false
         
         view.backgroundColor = .white
@@ -92,7 +93,8 @@ extension FavoritesViewController: FavoritesDisplayLogic {
         viewModels = pictures
         collectionView.reloadData()
     }
-    
+    /// Удалить картинку
+    /// - Parameter pictureID: id картинки
     func removePicture(pictureID: Int) {
         if let picIndex = viewModels.firstIndex(where: { picViewModel in
             picViewModel.outputs.id == pictureID
