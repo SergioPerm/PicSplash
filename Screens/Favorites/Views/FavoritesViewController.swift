@@ -75,7 +75,7 @@ private extension FavoritesViewController {
     }
 }
 
-// MARK: Setup
+// MARK: Setup constraints
 private extension FavoritesViewController {
     func setupConstraints() {
         collectionView.snp.makeConstraints({ make in

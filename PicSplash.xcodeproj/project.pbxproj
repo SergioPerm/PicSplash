@@ -12,6 +12,7 @@
 		B1179FA726E61F3100E0204E /* PicturesNetworkingMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1179FA626E61F3100E0204E /* PicturesNetworkingMock.swift */; };
 		B1179FA926E6490F00E0204E /* PicturesDataSourceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1179FA826E6490F00E0204E /* PicturesDataSourceMock.swift */; };
 		B1179FAB26E659A400E0204E /* PicturesRouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1179FAA26E659A400E0204E /* PicturesRouterTest.swift */; };
+		B1179FAD26E65F3A00E0204E /* KeyChainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1179FAC26E65F3A00E0204E /* KeyChainStore.swift */; };
 		B11E0DBC26DD1EB1000D01C9 /* PromisesTestHelpers in Frameworks */ = {isa = PBXBuildFile; productRef = B11E0DBB26DD1EB1000D01C9 /* PromisesTestHelpers */; };
 		B11E0DBE26DD1EB1000D01C9 /* Promises in Frameworks */ = {isa = PBXBuildFile; productRef = B11E0DBD26DD1EB1000D01C9 /* Promises */; };
 		B11E0DC026DD1EB1000D01C9 /* FBLPromises in Frameworks */ = {isa = PBXBuildFile; productRef = B11E0DBF26DD1EB1000D01C9 /* FBLPromises */; };
@@ -61,6 +62,13 @@
 		B1D45BAF26E4D53000B1C0DE /* PicturesViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D45BAE26E4D53000B1C0DE /* PicturesViewControllerMock.swift */; };
 		B1D45BB126E4D7E500B1C0DE /* PicturesPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D45BB026E4D7E500B1C0DE /* PicturesPresenterTest.swift */; };
 		B1D45BB326E5106500B1C0DE /* PicturesRouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D45BB226E5106500B1C0DE /* PicturesRouterMock.swift */; };
+		B1EF852826E8ECFA00F03C0E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EF852726E8ECFA00F03C0E /* LoginViewController.swift */; };
+		B1EF852A26E8ED3300F03C0E /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EF852926E8ED3300F03C0E /* LoginPresenter.swift */; };
+		B1EF852C26E8ED3C00F03C0E /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EF852B26E8ED3C00F03C0E /* LoginRouter.swift */; };
+		B1EF852E26E8ED4500F03C0E /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EF852D26E8ED4500F03C0E /* LoginInteractor.swift */; };
+		B1EF853026E8F0A400F03C0E /* LoginDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EF852F26E8F0A400F03C0E /* LoginDependency.swift */; };
+		B1EF853326E8FB5800F03C0E /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EF853226E8FB5800F03C0E /* LoginRequest.swift */; };
+		B1EF853526E8FB6500F03C0E /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EF853426E8FB6500F03C0E /* LoginAPI.swift */; };
 		B1F8E1EE26DE2EA1004F96E1 /* PictureDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F8E1ED26DE2EA1004F96E1 /* PictureDetailPresenter.swift */; };
 		B1F8E1F026DE2EB0004F96E1 /* PictureDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F8E1EF26DE2EB0004F96E1 /* PictureDetailRouter.swift */; };
 		B1F8E1F226DE2EBD004F96E1 /* PictureDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F8E1F126DE2EBD004F96E1 /* PictureDetailViewController.swift */; };
@@ -98,6 +106,7 @@
 		B1179FA626E61F3100E0204E /* PicturesNetworkingMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesNetworkingMock.swift; sourceTree = "<group>"; };
 		B1179FA826E6490F00E0204E /* PicturesDataSourceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesDataSourceMock.swift; sourceTree = "<group>"; };
 		B1179FAA26E659A400E0204E /* PicturesRouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesRouterTest.swift; sourceTree = "<group>"; };
+		B1179FAC26E65F3A00E0204E /* KeyChainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainStore.swift; sourceTree = "<group>"; };
 		B11E0DC426DD227D000D01C9 /* PicturesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesRequest.swift; sourceTree = "<group>"; };
 		B11E0DC626DD2519000D01C9 /* PicturesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesResponse.swift; sourceTree = "<group>"; };
 		B11E0DC826DD2818000D01C9 /* PicturesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesAPI.swift; sourceTree = "<group>"; };
@@ -145,6 +154,13 @@
 		B1D45BAE26E4D53000B1C0DE /* PicturesViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesViewControllerMock.swift; sourceTree = "<group>"; };
 		B1D45BB026E4D7E500B1C0DE /* PicturesPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesPresenterTest.swift; sourceTree = "<group>"; };
 		B1D45BB226E5106500B1C0DE /* PicturesRouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesRouterMock.swift; sourceTree = "<group>"; };
+		B1EF852726E8ECFA00F03C0E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B1EF852926E8ED3300F03C0E /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		B1EF852B26E8ED3C00F03C0E /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		B1EF852D26E8ED4500F03C0E /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		B1EF852F26E8F0A400F03C0E /* LoginDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDependency.swift; sourceTree = "<group>"; };
+		B1EF853226E8FB5800F03C0E /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		B1EF853426E8FB6500F03C0E /* LoginAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
 		B1F8E1ED26DE2EA1004F96E1 /* PictureDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDetailPresenter.swift; sourceTree = "<group>"; };
 		B1F8E1EF26DE2EB0004F96E1 /* PictureDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDetailRouter.swift; sourceTree = "<group>"; };
 		B1F8E1F126DE2EBD004F96E1 /* PictureDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDetailViewController.swift; sourceTree = "<group>"; };
@@ -281,6 +297,7 @@
 		B176D31B26D8F895007CD717 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				B1EF852426E8ECD500F03C0E /* Login */,
 				B195E6D426E1004400478869 /* Favorites */,
 				B176D30526D8EACB007CD717 /* Pictures */,
 				B1C4F1BA26D3E52600617FD9 /* Menu */,
@@ -301,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				B195E6CF26E0BFC500478869 /* FavoritesUserDefaults.swift */,
+				B1179FAC26E65F3A00E0204E /* KeyChainStore.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -475,6 +493,44 @@
 			path = Stubs;
 			sourceTree = "<group>";
 		};
+		B1EF852426E8ECD500F03C0E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B1EF853126E8FB4700F03C0E /* LoginAPI */,
+				B1EF852526E8ECE100F03C0E /* DI */,
+				B1EF852626E8ECE600F03C0E /* Views */,
+				B1EF852926E8ED3300F03C0E /* LoginPresenter.swift */,
+				B1EF852B26E8ED3C00F03C0E /* LoginRouter.swift */,
+				B1EF852D26E8ED4500F03C0E /* LoginInteractor.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		B1EF852526E8ECE100F03C0E /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				B1EF852F26E8F0A400F03C0E /* LoginDependency.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		B1EF852626E8ECE600F03C0E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B1EF852726E8ECFA00F03C0E /* LoginViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B1EF853126E8FB4700F03C0E /* LoginAPI */ = {
+			isa = PBXGroup;
+			children = (
+				B1EF853226E8FB5800F03C0E /* LoginRequest.swift */,
+				B1EF853426E8FB6500F03C0E /* LoginAPI.swift */,
+			);
+			path = LoginAPI;
+			sourceTree = "<group>";
+		};
 		B1F8E1EB26DE2E78004F96E1 /* PictureDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -627,6 +683,7 @@
 				B130015826DD152E00D849CA /* HTTPRequest.swift in Sources */,
 				B130015A26DD16FD00D849CA /* Consts.swift in Sources */,
 				B1F8E1F226DE2EBD004F96E1 /* PictureDetailViewController.swift in Sources */,
+				B1EF852E26E8ED4500F03C0E /* LoginInteractor.swift in Sources */,
 				B1F8E1F426DE2EE0004F96E1 /* PictureDetailInteractor.swift in Sources */,
 				B1C4F1C926D4113900617FD9 /* MenuBtnView.swift in Sources */,
 				B1D2A19B26DE966000DA40A8 /* PictureDetailAPI.swift in Sources */,
@@ -635,6 +692,7 @@
 				B176D31726D8EFAA007CD717 /* CollectionViewCellType.swift in Sources */,
 				B1C4F1BC26D3E54300617FD9 /* MenuViewController.swift in Sources */,
 				B195E6DE26E1009400478869 /* FavoritesInteractor.swift in Sources */,
+				B1EF853326E8FB5800F03C0E /* LoginRequest.swift in Sources */,
 				B176D32026D91A08007CD717 /* PictureLoader.swift in Sources */,
 				B176D30226D8C697007CD717 /* AppDependency.swift in Sources */,
 				B195E6D826E1006C00478869 /* FavoritesViewController.swift in Sources */,
@@ -643,9 +701,12 @@
 				B176D30026D8C639007CD717 /* GlobalNavigationViewController.swift in Sources */,
 				B16C400E26DA25F2005DB8EF /* UIColor.swift in Sources */,
 				B176D31426D8EF64007CD717 /* PictureCollectionViewCell.swift in Sources */,
+				B1EF853026E8F0A400F03C0E /* LoginDependency.swift in Sources */,
 				B195E6DA26E1007F00478869 /* FavoritesPresenter.swift in Sources */,
+				B1EF852826E8ECFA00F03C0E /* LoginViewController.swift in Sources */,
 				B11E0DC726DD2519000D01C9 /* PicturesResponse.swift in Sources */,
 				B176D30926D8EAEE007CD717 /* PicturesViewController.swift in Sources */,
+				B1EF853526E8FB6500F03C0E /* LoginAPI.swift in Sources */,
 				B16C401226DA2C80005DB8EF /* PicSplashNetwork.swift in Sources */,
 				B176D31126D8EBFE007CD717 /* PicturesDependency.swift in Sources */,
 				B195E6E026E1104C00478869 /* FavoritesDependency.swift in Sources */,
@@ -653,11 +714,14 @@
 				B1F8E20726DE5FEF004F96E1 /* PictureDetailAssembly.swift in Sources */,
 				B1C4F1C426D4104000617FD9 /* MenuInteractor.swift in Sources */,
 				B1C4F1C226D4103400617FD9 /* MenuRouter.swift in Sources */,
+				B1EF852A26E8ED3300F03C0E /* LoginPresenter.swift in Sources */,
 				B176D30D26D8EB0E007CD717 /* PicturesRouter.swift in Sources */,
+				B1EF852C26E8ED3C00F03C0E /* LoginRouter.swift in Sources */,
 				B176D31E26D8F937007CD717 /* Picture.swift in Sources */,
 				B16C400C26DA2398005DB8EF /* UIImageView.swift in Sources */,
 				B195E6DC26E1008900478869 /* FavoritesRouter.swift in Sources */,
 				B176D30F26D8EB22007CD717 /* PicturesInteractor.swift in Sources */,
+				B1179FAD26E65F3A00E0204E /* KeyChainStore.swift in Sources */,
 				B1F8E1F726DE32A9004F96E1 /* PictureDetailDependecy.swift in Sources */,
 				B11E0DC926DD2818000D01C9 /* PicturesAPI.swift in Sources */,
 				B1C4F1C026D4102C00617FD9 /* MenuPresenter.swift in Sources */,

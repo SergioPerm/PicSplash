@@ -28,7 +28,7 @@ private extension AppDelegate {
     }
     
     func createAndShowStartScreen() {
-        let router: MenuRouter = AppDI.resolve()
+        let router: LoginRouter = AppDI.resolve()
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = router.navigationController

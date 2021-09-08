@@ -13,16 +13,16 @@ protocol PicturesNetworking {
     func getPicturesByQuery(queryString: String, page: Int, perPage: Int) -> Promise<PicturesResponse>
 }
 
-class PicturesAPI: PicturesNetworking {
+final class PicturesAPI {
+    private let networkService: PicSplashNetwork = AppDI.resolve()
+}
+
+extension PicturesAPI: PicturesNetworking {
     func getPictures(page: Int, perPage: Int) -> Promise<PicturesResponse> {
-        let networkService: PicSplashNetwork = AppDI.resolve()
-        
-        return networkService.request(PicturesRequest.getPictures(page: page, perPage: perPage)) 
+        return networkService.request(PicturesRequest.getPictures(page: page, perPage: perPage))
     }
     
     func getPicturesByQuery(queryString: String, page: Int, perPage: Int) -> Promise<PicturesResponse> {
-        let networkService: PicSplashNetwork = AppDI.resolve()
-        
         return networkService.request(PicturesRequest.getPicturesByQuery(queryString: queryString, page: page, perPage: perPage))
     }
 }
