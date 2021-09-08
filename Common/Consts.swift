@@ -8,6 +8,7 @@
 import Foundation
 
 enum Consts {
+    /// Endpoints
     enum Links {
         static let pexelBaseUrl = "api.pexels.com"
     }

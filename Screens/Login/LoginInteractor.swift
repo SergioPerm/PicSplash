@@ -7,9 +7,12 @@
 
 import Foundation
 
-/// Протокол для работы с PicturesInteractor
+/// Протокол для работы с LoginInteractor
 protocol LoginBusinessLogic {
+    ///Логин с помощью API key
+    /// - Parameter apiKey: строка с API key
     func login(apiKey: String)
+    /// Проверить статус авторизации
     func checkAuthorization()
 }
 
@@ -27,6 +30,7 @@ final class LoginInteractor {
 
 // MARK: MenuBusinessLogic
 extension LoginInteractor: LoginBusinessLogic {
+    /// Проверить статус авторизации
     func checkAuthorization() {
         guard let currentApiKey = keyChainStore.getApiKey(for: Consts.Links.pexelBaseUrl) else {
             return
@@ -36,7 +40,8 @@ extension LoginInteractor: LoginBusinessLogic {
             self.presenter?.goToApp()
         }
     }
-    
+    ///Логин с помощью API key
+    /// - Parameter apiKey: строка с API key
     func login(apiKey: String) {
         networkAPI.checkConnection(apiKey: apiKey).then { response in
             self.saveApiKey(apiKey: apiKey)
@@ -47,6 +52,8 @@ extension LoginInteractor: LoginBusinessLogic {
 }
 
 private extension LoginInteractor {
+    /// Сохранить API key
+    /// - Parameter apiKey: строка с API key
     func saveApiKey(apiKey: String) {
         keyChainStore.setApiKey(apiKey, for: Consts.Links.pexelBaseUrl)
         presenter?.goToApp()
