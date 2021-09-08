@@ -8,12 +8,15 @@
 import UIKit
 import SnapKit
 
+/// Протокол для работы PicturesBottomLoaderView
 protocol PicturesBottomLoaderViewType {
+    /// Показать
     func show()
+    /// Спрятать
     func hide()
 }
 
-class PicturesBottomLoaderView: UICollectionReusableView {
+final class PicturesBottomLoaderView: UICollectionReusableView {
 
     /// activityIndicator
     let activityIndicator: UIActivityIndicatorView = {
@@ -23,6 +26,7 @@ class PicturesBottomLoaderView: UICollectionReusableView {
         return indicator
     }()
     
+    // MARK: Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -51,7 +55,7 @@ private extension PicturesBottomLoaderView {
     }
 }
 
-// MARK: SearchAdsFooterLoadViewType
+// MARK: PicturesBottomLoaderViewType
 extension PicturesBottomLoaderView: PicturesBottomLoaderViewType {
     func show() {
         activityIndicator.isHidden = false

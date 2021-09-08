@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Модель ответа при запроса картинок
 struct PicturesResponse: Codable {
     var page: Int
     var perPage: Int

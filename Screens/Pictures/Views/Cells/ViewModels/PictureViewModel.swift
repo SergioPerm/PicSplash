@@ -7,13 +7,14 @@
 
 import Foundation
 
+/// Протокол для работы c PictureViewModelType для передачи данных или вызова методов
 protocol PictureViewModelInputs {
     /// Открыть картинку
     func openPicture()
     /// Установить/снять статус избранного
     func changeFavoriteStatus()
 }
-
+/// Протокол для работы c PictureViewModelType для чтения данных или подписок
 protocol PictureViewModelOutputs {
     /// Картинка в избранных
     var isFavorite: Bool { get }
@@ -27,19 +28,25 @@ protocol PictureViewModelOutputs {
     var avgColorHex: String { get }
 }
 
+/// Протокол для роботы c PictureViewModel
 protocol PictureViewModelType: AnyObject {
+    /// Протокол для работы c PictureViewModelType для передачи данных или вызова методов
     var inputs: PictureViewModelInputs { get }
+    /// Протокол для работы c PictureViewModelType для чтения данных или подписок
     var outputs: PictureViewModelOutputs { get }
 }
 
 final class PictureViewModel: PictureViewModelType, PictureViewModelInputs, PictureViewModelOutputs {
     
+    /// Объект картинки
     private var picture: Picture
+    /// Ссылка на обработчики событий из Presenter
     private weak var handlers: PicturesHandlers?
     
     var inputs: PictureViewModelInputs { return self }
     var outputs: PictureViewModelOutputs { return self }
     
+    // MARK: Init
     init(picture: Picture, handlers: PicturesHandlers) {
         self.picture = picture
         self.handlers = handlers

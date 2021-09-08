@@ -76,6 +76,7 @@ class PictureCollectionViewCell: UICollectionViewCell, CollectionViewCellType {
         return btn
     }()
     
+    // MARK: Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -86,6 +87,7 @@ class PictureCollectionViewCell: UICollectionViewCell, CollectionViewCellType {
         super.init(coder: coder)
     }
     
+    // MARK: Cell life-cycle
     override func prepareForReuse() {
         super.prepareForReuse()
         imageView.image = nil
@@ -100,7 +102,6 @@ class PictureCollectionViewCell: UICollectionViewCell, CollectionViewCellType {
 // MARK: Setup
 private extension PictureCollectionViewCell {
     func setup() {
-        
         gradientView.layer.addSublayer(gradient)
         imageView.addSubview(gradientView)
         imageView.bringSubviewToFront(gradientView)
@@ -145,7 +146,6 @@ private extension PictureCollectionViewCell {
             make.bottom.equalToSuperview().offset(-10)
             make.height.equalTo(14).priority(.low)
         })
-        
     }
 }
 

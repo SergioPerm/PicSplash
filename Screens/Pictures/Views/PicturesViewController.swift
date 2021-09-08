@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-/// Протокол отображения MenuViewController-а
+/// Протокол для работы с PicturesViewController
 protocol PicturesDisplayLogic: AnyObject {
     /// Полностью перезагрузить картинки
     /// - Parameter ads: viewModels картинок
@@ -23,7 +23,6 @@ class PicturesViewController: UIViewController {
     // MARK: Presenter
     var presenter: PicturesViewControllerOutput?
         
-    
     // MARK: UI
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -69,7 +68,6 @@ class PicturesViewController: UIViewController {
 // MARK: Setup
 private extension PicturesViewController {
     func setup() {
-        
         navigationController?.isNavigationBarHidden = false
         
         view.backgroundColor = .white
@@ -103,7 +101,7 @@ private extension PicturesViewController {
     }
 }
 
-// MARK: Setup
+// MARK: Setup constraints
 private extension PicturesViewController {
     func setupConstraints() {
         collectionView.snp.makeConstraints({ make in

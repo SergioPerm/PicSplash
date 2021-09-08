@@ -17,7 +17,7 @@ protocol PicturesHandlers: AnyObject {
     func setFavorite(picture: Picture)
 }
 
-/// Протокол работы с MenuPresenter
+/// Протокол работы с PicturesPresenter
 protocol PicturesPresentationLogic: AnyObject {
     /// Загрузить картинки
     /// - Parameter picturesObjects: Массив объектов картинок
@@ -27,7 +27,7 @@ protocol PicturesPresentationLogic: AnyObject {
     func loadPicturesFromPage(picturesObjects: [Picture])
 }
 
-/// Протокол для работы c MenuPresenter из MenuViewController
+/// Протокол для работы c PicturesPresenter из PicturesViewController
 protocol PicturesViewControllerOutput {
     /// Перезагрузить картинки
     func loadPictures()
@@ -54,8 +54,10 @@ final class PicturesPresenter {
     }
 }
 
-// MARK: MenuPresentationLogic
+// MARK: PicturesPresentationLogic
 extension PicturesPresenter: PicturesPresentationLogic {
+    /// Загрузить картинки
+    /// - Parameter picturesObjects: Массив объектов картинок
     func loadPictures(picturesObjects: [Picture]) {
         var viewModels: [PictureViewModelType] = []
         
@@ -79,8 +81,9 @@ extension PicturesPresenter: PicturesPresentationLogic {
     }
 }
 
-// MARK: MenuViewControllerOutput
+// MARK: PicturesViewControllerOutput
 extension PicturesPresenter: PicturesViewControllerOutput {
+    /// Перезагрузить картинки
     func loadPictures() {
         interactor?.loadPictures()
     }
@@ -110,11 +113,15 @@ extension PicturesPresenter: PicturesViewControllerOutput {
     }
 }
 
+// MARK: PicturesHandlers
 extension PicturesPresenter: PicturesHandlers {
+    /// Выбрать картинку
+    /// - Parameter picture: объект картинки
     func selectPicture(picture: Picture) {
         router?.routeTo(target: .detailPicture(picture: picture))
     }
-    
+    /// Сменить статус избранного у картинки
+    /// - Parameter picture: объект картинки
     func setFavorite(picture: Picture) {
         interactor?.changeFavoriteStatus(picture: picture)
     }
