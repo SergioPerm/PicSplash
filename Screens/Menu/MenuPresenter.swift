@@ -9,7 +9,7 @@ import Foundation
 
 /// Протокол работы с MenuPresenter
 protocol MenuPresentationLogic: AnyObject {
-    
+    func closeMenu()
 }
 
 /// Протокол для работы c MenuPresenter из MenuViewController
@@ -17,6 +17,7 @@ protocol MenuViewControllerOutput {
     /// Открыть экран картинок
     func openPictures()
     func openFavorites()
+    func logout()
 }
 
 final class MenuPresenter {
@@ -34,7 +35,9 @@ final class MenuPresenter {
 
 // MARK: MenuPresentationLogic
 extension MenuPresenter: MenuPresentationLogic{
-    
+    func closeMenu() {
+        viewController?.closeMenu()
+    }
 }
 
 // MARK: MenuViewControllerOutput
@@ -46,6 +49,10 @@ extension MenuPresenter: MenuViewControllerOutput {
     
     func openFavorites() {
         router?.routeTo(target: .favorites)
+    }
+    
+    func logout() {
+        interactor?.logout()
     }
 }
 

@@ -10,7 +10,7 @@ import SnapKit
 
 /// Протокол отображения MenuViewController-а
 protocol MenuDisplayLogic: AnyObject {
-    
+    func closeMenu()
 }
 
 final class MenuViewController: UIViewController {
@@ -34,6 +34,16 @@ final class MenuViewController: UIViewController {
         return view
     }()
             
+    let logOutBtn: UIButton = {
+        let btn = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.setTitle("Logout", for: .normal)
+        btn.setTitleColor(.red, for: .normal)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        
+        return btn
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -59,11 +69,14 @@ private extension MenuViewController {
         
         view.addSubview(picturesView)
         view.addSubview(favoritesView)
+        view.addSubview(logOutBtn)
         
         let picturesTap = UITapGestureRecognizer(target: self, action: #selector(openPictures))
         let favoritesTap = UITapGestureRecognizer(target: self, action: #selector(openFavorites))
         picturesView.addGestureRecognizer(picturesTap)
         favoritesView.addGestureRecognizer(favoritesTap)
+        
+        logOutBtn.addTarget(self, action: #selector(logoutAction), for: .touchUpInside)
     }
 }
 
@@ -87,6 +100,12 @@ private extension MenuViewController {
             make.width.height.equalTo(btnSide)
         })
         
+        logOutBtn.snp.makeConstraints({ make in
+            make.width.equalTo(80)
+            make.height.equalTo(40)
+            make.top.equalTo(favoritesView.snp.bottom).offset(50)
+            make.centerX.equalToSuperview()
+        })
     }
 }
 
@@ -95,10 +114,18 @@ private extension MenuViewController {
     @objc func openPictures() {
         presenter?.openPictures()
     }
+    
+    @objc func openFavorites() {
+        presenter?.openFavorites()
+    }
+    
+    @objc func logoutAction() {
+        presenter?.logout()
+    }
 }
 
 extension MenuViewController: MenuDisplayLogic {
-    @objc func openFavorites() {
-        presenter?.openFavorites()
+    func closeMenu() {
+        navigationController?.popViewController(animated: true)
     }
 }
