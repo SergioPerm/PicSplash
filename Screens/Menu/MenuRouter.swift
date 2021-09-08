@@ -10,6 +10,8 @@ import SwiftLazy
 
 /// Протокол для работы с MenuRouter из Presenter
 protocol MenuRoutingLogic {
+    /// Перейти на новый экран
+    /// - Parameter target: Target
     func routeTo(target: MenuRouter.Targets)
 }
 
@@ -36,6 +38,8 @@ final class MenuRouter {
 
 // MARK: MenuRoutingLogic
 extension MenuRouter: MenuRoutingLogic {
+    /// Перейти на новый экран
+    /// - Parameter target: Target
     func routeTo(target: Targets) {
         switch target {
         case .pictures:

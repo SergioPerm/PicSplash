@@ -8,8 +8,9 @@
 import UIKit
 import SnapKit
 
-/// Протокол отображения MenuViewController-а
+/// Протокол для работы с MenuViewController
 protocol MenuDisplayLogic: AnyObject {
+    /// Закрыть меню
     func closeMenu()
 }
 
@@ -44,6 +45,7 @@ final class MenuViewController: UIViewController {
         return btn
     }()
     
+    // MARK: View life-cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -59,7 +61,6 @@ final class MenuViewController: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.isNavigationBarHidden = false
     }
-    
 }
 
 // MARK: Setup
@@ -124,7 +125,9 @@ private extension MenuViewController {
     }
 }
 
+// MARK: MenuDisplayLogic
 extension MenuViewController: MenuDisplayLogic {
+    /// Закрыть меню
     func closeMenu() {
         navigationController?.popViewController(animated: true)
     }

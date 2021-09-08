@@ -8,8 +8,10 @@
 import UIKit
 import SnapKit
 
+/// Класс кнопки для меню
 final class MenuBtnView: UIView {
 
+    // MARK: UI
     let shadowLayer: CAShapeLayer? = CAShapeLayer()
     
     let icon: UIImageView = {
@@ -30,6 +32,7 @@ final class MenuBtnView: UIView {
         return label
     }()
     
+    // MARK: Init
     init(title: String, image: UIImage?) {
         super.init(frame: .zero)
         self.icon.image = image

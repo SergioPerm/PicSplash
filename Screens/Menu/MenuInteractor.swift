@@ -9,6 +9,7 @@ import Foundation
 
 /// Протокол для работы с MenuInteractor
 protocol MenuBusinessLogic {
+    /// Выйти
     func logout()
 }
 
@@ -23,6 +24,7 @@ final class MenuInteractor {
 
 // MARK: MenuBusinessLogic
 extension MenuInteractor: MenuBusinessLogic {
+    /// Выйти
     func logout() {
         keyChainStore.deleteApiKey(for: Consts.Links.pexelBaseUrl)
         presenter?.closeMenu()
