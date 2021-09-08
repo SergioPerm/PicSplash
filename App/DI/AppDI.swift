@@ -14,6 +14,7 @@ class AppDI {
     static func reg() {
         DISetting.Log.level = .info
         AppDependency.load(container: container)
+        LoginDependency.load(container: container)
         MenuDependency.load(container: container)
         PicturesDependency.load(container: container)
         FavoritesDependency.load(container: container)

@@ -40,8 +40,12 @@ extension PicturesRequest: HTTPRequest {
         var headers = [String:String]()
         
         headers["Accept"] = "application/json"
-        headers["Authorization"] = "563492ad6f91700001000001a47f4c0d9f054a99a392caad0f8f9c04"
         
+        //Плохое решение, сервис локатор
+        let keyChainstore: KeyChainStore = AppDI.resolve()
+        
+        headers["Authorization"] = keyChainstore.getApiKey(for: Consts.Links.pexelBaseUrl)
+                
         return headers
     }
     
