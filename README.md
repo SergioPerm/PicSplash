@@ -7,7 +7,7 @@ Login         |  Menu | Pictures | Search | Detail
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![](https://github.com/SergioPerm/PicSplash/blob/main/scrn1.png)   |  ![](https://github.com/SergioPerm/PicSplash/blob/main/scrn2.png) | ![](https://github.com/SergioPerm/PicSplash/blob/main/scrn3.png) | ![](https://github.com/SergioPerm/PicSplash/blob/main/scrn4.png) | ![](https://github.com/SergioPerm/PicSplash/blob/main/scrn5.png)
 
-✅ VIPER Architecture
+✅ VIPER
 
 ✅ Protocol Oriented
 
@@ -22,3 +22,8 @@ Login         |  Menu | Pictures | Search | Detail
 - DITranquility
 - SwiftLazy
 - Google promises
+
+### Native stack:
+- URLSession
+- UserDefaults
+- KeyChain
