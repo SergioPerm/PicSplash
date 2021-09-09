@@ -18,7 +18,7 @@ protocol PicturesDisplayLogic: AnyObject {
     func addPictures(pictures: [PictureViewModelType])
 }
 
-class PicturesViewController: UIViewController {
+final class PicturesViewController: UIViewController {
 
     // MARK: Presenter
     var presenter: PicturesViewControllerOutput?
