@@ -33,11 +33,15 @@ extension LoginInteractor: LoginBusinessLogic {
     /// Проверить статус авторизации
     func checkAuthorization() {
         guard let currentApiKey = keyChainStore.getApiKey(for: Consts.Links.pexelBaseUrl) else {
+            presenter?.checkAuthorizationFinish()
             return
         }
         
         networkAPI.checkConnection(apiKey: currentApiKey).then { response in
+            self.presenter?.checkAuthorizationFinish()
             self.presenter?.goToApp()
+        }.catch { error in
+            self.presenter?.checkAuthorizationFinish()
         }
     }
     ///Логин с помощью API key
