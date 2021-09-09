@@ -14,6 +14,7 @@ protocol LoginPresentationLogic: AnyObject {
     /// Показать ошибку
     /// - Parameter errorDesc: описание ошибки
     func showError(errorDesc: String)
+    func checkAuthorizationFinish()
 }
 
 /// Протокол для работы c LoginPresenter из LoginViewController
@@ -61,5 +62,9 @@ extension LoginPresenter: LoginPresentationLogic {
     /// - Parameter errorDesc: описание ошибки
     func showError(errorDesc: String) {
         viewController?.showLoginError(errorDesc: errorDesc)
+    }
+    
+    func checkAuthorizationFinish() {
+        viewController?.checkAuthorizationFinish()
     }
 }

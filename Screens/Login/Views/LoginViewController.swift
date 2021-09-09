@@ -13,6 +13,7 @@ protocol LoginDisplayLogic: AnyObject {
     /// Показать ошибку входа
     /// - Parameter errorDesc: описание ошибки
     func showLoginError(errorDesc: String)
+    func checkAuthorizationFinish()
 }
 
 final class LoginViewController: UIViewController {
@@ -62,17 +63,31 @@ final class LoginViewController: UIViewController {
         return btn
     }()
     
+    let loadView: LoadView = {
+        let loadView = LoadView()
+        loadView.translatesAutoresizingMaskIntoConstraints = false
+        loadView.isHidden = true
+        
+        return loadView
+    }()
+    
     // MARK: View life-cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         setupConstraints()
-        presenter?.checkAuthorization()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        showLoadView()
+        presenter?.checkAuthorization()
     }
 }
 
@@ -85,6 +100,7 @@ private extension LoginViewController {
         view.addSubview(apiTextField)
         view.addSubview(infoLabel)
         view.addSubview(loginBtn)
+        view.addSubview(loadView)
         
         loginBtn.addTarget(self, action: #selector(loginAction), for: .touchUpInside)
     }
@@ -121,6 +137,10 @@ private extension LoginViewController {
             make.right.equalToSuperview().offset(-10)
         })
         
+        loadView.snp.makeConstraints({ make in
+            make.left.top.right.bottom.equalToSuperview()
+        })
+        
     }
 }
 
@@ -139,5 +159,20 @@ extension LoginViewController: LoginDisplayLogic {
         let alert = UIAlertController(title: "Error", message: errorDesc, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
+    }
+    
+    func checkAuthorizationFinish() {
+        hideLoadView()
+    }
+}
+
+// MARK: Methods
+private extension LoginViewController {
+    func showLoadView() {
+        loadView.isHidden = false
+    }
+    
+    func hideLoadView() {
+        loadView.isHidden = true
     }
 }
