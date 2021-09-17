@@ -59,24 +59,14 @@ extension PicturesPresenter: PicturesPresentationLogic {
     /// Загрузить картинки
     /// - Parameter picturesObjects: Массив объектов картинок
     func loadPictures(picturesObjects: [Picture]) {
-        var viewModels: [PictureViewModelType] = []
-        
-        picturesObjects.forEach({
-            viewModels.append(PictureViewModel(picture: $0, handlers: self))
-        })
-        
+        let viewModels = picturesObjects.map({ PictureViewModel(picture: $0, handlers: self) })
         viewController?.reloadPictures(pictures: viewModels)
     }
     
     /// Загрузить картинки постранично
     /// - Parameter picturesObjects: Массив объектов картинок
     func loadPicturesFromPage(picturesObjects: [Picture]) {
-        var viewModels: [PictureViewModelType] = []
-        
-        picturesObjects.forEach({
-            viewModels.append(PictureViewModel(picture: $0, handlers: self))
-        })
-        
+        let viewModels = picturesObjects.map({ PictureViewModel(picture: $0, handlers: self) })
         viewController?.addPictures(pictures: viewModels)
     }
 }
